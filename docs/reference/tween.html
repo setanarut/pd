@@ -1,0 +1,1226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>pd.tween API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>pd.tween</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from enum import Enum
+import math
+
+
+class Easings(Enum):
+    &#34;&#34;&#34; https://easings.net/ &#34;&#34;&#34;
+    EASE_IN_BACK = &#34;ease_in_back&#34;
+    EASE_IN_BOUNCE = &#34;ease_in_bounce&#34;
+    EASE_IN_CIRC = &#34;ease_in_circ&#34;
+    EASE_IN_CUBIC = &#34;ease_in_cubic&#34;
+    EASE_IN_ELASTIC = &#34;ease_in_elastic&#34;
+    EASE_IN_EXPO = &#34;ease_in_expo&#34;
+    EASE_IN_OUT_BACK = &#34;ease_in_out_back&#34;
+    EASE_IN_OUT_BOUNCE = &#34;ease_in_out_bounce&#34;
+    EASE_IN_OUT_CIRC = &#34;ease_in_out_circ&#34;
+    EASE_IN_OUT_CUBIC = &#34;ease_in_out_cubic&#34;
+    EASE_IN_OUT_ELASTIC = &#34;ease_in_out_elastic&#34;
+    EASE_IN_OUT_EXPO = &#34;ease_in_out_expo&#34;
+    EASE_IN_OUT_POLY = &#34;ease_in_out_poly&#34;
+    EASE_IN_OUT_QUAD = &#34;ease_in_out_quad&#34;
+    EASE_IN_OUT_QUART = &#34;ease_in_out_quart&#34;
+    EASE_IN_OUT_QUINT = &#34;ease_in_out_quint&#34;
+    EASE_IN_OUT_SINE = &#34;ease_in_out_sine&#34;
+    EASE_IN_POLY = &#34;ease_in_poly&#34;
+    EASE_IN_QUAD = &#34;ease_in_quad&#34;
+    EASE_IN_QUART = &#34;ease_in_quart&#34;
+    EASE_IN_QUINT = &#34;ease_in_quint&#34;
+    EASE_IN_SINE = &#34;ease_in_sine&#34;
+    EASE_OUT_BACK = &#34;ease_out_back&#34;
+    EASE_OUT_BOUNCE = &#34;ease_out_bounce&#34;
+    EASE_OUT_CIRC = &#34;ease_out_circ&#34;
+    EASE_OUT_CUBIC = &#34;ease_out_cubic&#34;
+    EASE_OUT_ELASTIC = &#34;ease_out_elastic&#34;
+    EASE_OUT_EXPO = &#34;ease_out_expo&#34;
+    EASE_OUT_POLY = &#34;ease_out_poly&#34;
+    EASE_OUT_QUAD = &#34;ease_out_quad&#34;
+    EASE_OUT_QUART = &#34;ease_out_quart&#34;
+    EASE_OUT_QUINT = &#34;ease_out_quint&#34;
+    EASE_OUT_SINE = &#34;ease_out_sine&#34;
+    LINEAR = &#34;linear&#34;
+
+
+def _check_range(n):
+    if not 0.0 &lt;= n &lt;= 1.0:
+        raise ValueError(&#34;Argument must be between 0.0 and 1.0.&#34;)
+
+
+def get_point_on_line(x1, y1, x2, y2, t):
+    x = ((x2 - x1) * t) + x1
+    y = ((y2 - y1) * t) + y1
+    return (x, y)
+
+
+def linear(t):
+    _check_range(t)
+    return t
+
+
+def ease_in_quad(t):
+    _check_range(t)
+    return t**2
+
+
+def ease_out_quad(t):
+    _check_range(t)
+    return -t * (t - 2)
+
+
+def ease_in_out_quad(t):
+    _check_range(t)
+    if t &lt; 0.5:
+        return 2 * t**2
+    else:
+        t = t * 2 - 1
+        return -0.5 * (t * (t - 2) - 1)
+
+
+def ease_in_cubic(t):
+    _check_range(t)
+    return t**3
+
+
+def ease_out_cubic(n):
+    _check_range(n)
+    n -= 1
+    return n**3 + 1
+
+
+def ease_in_out_cubic(t: float):
+    &#34;&#34;&#34;A cubic tween function that accelerates, reaches the midpoint, and then decelerates.
+    t (float): The time progress, starting at 0.0 and ending at 1.0.
+    &#34;&#34;&#34;
+    _check_range(t)
+    t *= 2
+    if t &lt; 1:
+        return 0.5 * t**3
+    else:
+        t -= 2
+        return 0.5 * (t**3 + 2)
+
+
+def ease_in_quart(n):
+    _check_range(n)
+    return n**4
+
+
+def ease_out_quart(n):
+    _check_range(n)
+    n -= 1
+    return -(n**4 - 1)
+
+
+def ease_in_out_quart(n):
+    _check_range(n)
+    n *= 2
+    if n &lt; 1:
+        return 0.5 * n**4
+    else:
+        n -= 2
+        return -0.5 * (n**4 - 2)
+
+
+def ease_in_quint(n):
+    _check_range(n)
+    return n**5
+
+
+def ease_out_quint(n):
+    _check_range(n)
+    n -= 1
+    return n**5 + 1
+
+
+def ease_in_out_quint(n):
+    _check_range(n)
+    n *= 2
+    if n &lt; 1:
+        return 0.5 * n**5
+    else:
+        n -= 2
+        return 0.5 * (n**5 + 2)
+
+
+def ease_in_poly(n, degree=2):
+    _check_range(n)
+    if not isinstance(degree, (int, float)) or degree &lt; 0:
+        raise ValueError(&#34;degree argument must be a positive number.&#34;)
+    return n**degree
+
+
+def ease_out_poly(n, degree=2):
+    _check_range(n)
+    if not isinstance(degree, (int, float)) or degree &lt; 0:
+        raise ValueError(&#34;degree argument must be a positive number.&#34;)
+    return 1 - abs((n - 1) ** degree)
+
+
+def ease_in_out_poly(t: float, degree: float = 2):
+    _check_range(t)
+    if not isinstance(degree, (int, float)) or degree &lt; 0:
+        raise ValueError(&#34;degree argument must be a positive number.&#34;)
+    t *= 2
+    if t &lt; 1:
+        return 0.5 * t**degree
+    else:
+        t -= 2
+        return 1 - 0.5 * abs(t**degree)
+
+
+def ease_in_sine(n):
+    _check_range(n)
+    return -1 * math.cos(n * math.pi / 2) + 1
+
+
+def ease_out_sine(n):
+    _check_range(n)
+    return math.sin(n * math.pi / 2)
+
+
+def ease_in_out_sine(n):
+    _check_range(n)
+    return -0.5 * (math.cos(math.pi * n) - 1)
+
+
+def ease_in_expo(n):
+    _check_range(n)
+    if n == 0:
+        return 0
+    else:
+        return 2 ** (10 * (n - 1))
+
+
+def ease_out_expo(n):
+    _check_range(n)
+    if n == 1:
+        return 1
+    else:
+        return -(2 ** (-10 * n)) + 1
+
+
+def ease_in_out_expo(n):
+    _check_range(n)
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        n *= 2
+        if n &lt; 1:
+            return 0.5 * 2 ** (10 * (n - 1))
+        else:
+            n -= 1
+            return 0.5 * (-1 * (2 ** (-10 * n)) + 2)
+
+
+def ease_in_circ(n):
+    _check_range(n)
+    return -1 * (math.sqrt(1 - n * n) - 1)
+
+
+def ease_out_circ(n):
+    _check_range(n)
+    n -= 1
+    return math.sqrt(1 - (n * n))
+
+
+def ease_in_out_circ(n):
+    _check_range(n)
+    n *= 2
+    if n &lt; 1:
+        return -0.5 * (math.sqrt(1 - n**2) - 1)
+    else:
+        n -= 2
+        return 0.5 * (math.sqrt(1 - n**2) + 1)
+
+
+def ease_in_elastic(n, amplitude=1, period=0.3):
+    _check_range(n)
+    return 1 - ease_out_elastic(1 - n, amplitude=amplitude, period=period)
+
+
+def ease_out_elastic(n, amplitude=1, period=0.3):
+    _check_range(n)
+    if amplitude &lt; 1:
+        amplitude = 1
+        s = period / 4
+    else:
+        s = period / (2 * math.pi) * math.asin(1 / amplitude)
+    return amplitude * 2 ** (-10 * n) * math.sin((n - s) * (2 * math.pi / period)) + 1
+
+
+def ease_in_out_elastic(n, amplitude=1, period=0.5):
+    _check_range(n)
+    n *= 2
+    if n &lt; 1:
+        return ease_in_elastic(n, amplitude=amplitude, period=period) / 2
+    else:
+        return ease_out_elastic(n - 1, amplitude=amplitude, period=period) / 2 + 0.5
+
+
+def ease_in_back(n, s=1.70158):
+    _check_range(n)
+    return n * n * ((s + 1) * n - s)
+
+
+def ease_out_back(n, s=1.70158):
+    _check_range(n)
+    n -= 1
+    return n * n * ((s + 1) * n + s) + 1
+
+
+def ease_in_out_back(n, s=1.70158):
+    _check_range(n)
+    n *= 2
+    if n &lt; 1:
+        s *= 1.525
+        return 0.5 * (n * n * ((s + 1) * n - s))
+    else:
+        n -= 2
+        s *= 1.525
+        return 0.5 * (n * n * ((s + 1) * n + s) + 2)
+
+
+def ease_in_bounce(n):
+    _check_range(n)
+    return 1 - ease_out_bounce(1 - n)
+
+
+def ease_out_bounce(n):
+    _check_range(n)
+    if n &lt; (1 / 2.75):
+        return 7.5625 * n * n
+    elif n &lt; (2 / 2.75):
+        n -= 1.5 / 2.75
+        return 7.5625 * n * n + 0.75
+    elif n &lt; (2.5 / 2.75):
+        n -= 2.25 / 2.75
+        return 7.5625 * n * n + 0.9375
+    else:
+        n -= 2.65 / 2.75
+        return 7.5625 * n * n + 0.984375
+
+
+def ease_in_out_bounce(n):
+    _check_range(n)
+    if n &lt; 0.5:
+        return ease_in_bounce(n * 2) * 0.5
+    else:
+        return ease_out_bounce(n * 2 - 1) * 0.5 + 0.5</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="pd.tween.ease_in_back"><code class="name flex">
+<span>def <span class="ident">ease_in_back</span></span>(<span>n, s=1.70158)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_in_back(n, s=1.70158):
+    _check_range(n)
+    return n * n * ((s + 1) * n - s)</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_in_bounce"><code class="name flex">
+<span>def <span class="ident">ease_in_bounce</span></span>(<span>n)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_in_bounce(n):
+    _check_range(n)
+    return 1 - ease_out_bounce(1 - n)</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_in_circ"><code class="name flex">
+<span>def <span class="ident">ease_in_circ</span></span>(<span>n)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_in_circ(n):
+    _check_range(n)
+    return -1 * (math.sqrt(1 - n * n) - 1)</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_in_cubic"><code class="name flex">
+<span>def <span class="ident">ease_in_cubic</span></span>(<span>t)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_in_cubic(t):
+    _check_range(t)
+    return t**3</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_in_elastic"><code class="name flex">
+<span>def <span class="ident">ease_in_elastic</span></span>(<span>n, amplitude=1, period=0.3)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_in_elastic(n, amplitude=1, period=0.3):
+    _check_range(n)
+    return 1 - ease_out_elastic(1 - n, amplitude=amplitude, period=period)</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_in_expo"><code class="name flex">
+<span>def <span class="ident">ease_in_expo</span></span>(<span>n)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_in_expo(n):
+    _check_range(n)
+    if n == 0:
+        return 0
+    else:
+        return 2 ** (10 * (n - 1))</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_in_out_back"><code class="name flex">
+<span>def <span class="ident">ease_in_out_back</span></span>(<span>n, s=1.70158)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_in_out_back(n, s=1.70158):
+    _check_range(n)
+    n *= 2
+    if n &lt; 1:
+        s *= 1.525
+        return 0.5 * (n * n * ((s + 1) * n - s))
+    else:
+        n -= 2
+        s *= 1.525
+        return 0.5 * (n * n * ((s + 1) * n + s) + 2)</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_in_out_bounce"><code class="name flex">
+<span>def <span class="ident">ease_in_out_bounce</span></span>(<span>n)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_in_out_bounce(n):
+    _check_range(n)
+    if n &lt; 0.5:
+        return ease_in_bounce(n * 2) * 0.5
+    else:
+        return ease_out_bounce(n * 2 - 1) * 0.5 + 0.5</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_in_out_circ"><code class="name flex">
+<span>def <span class="ident">ease_in_out_circ</span></span>(<span>n)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_in_out_circ(n):
+    _check_range(n)
+    n *= 2
+    if n &lt; 1:
+        return -0.5 * (math.sqrt(1 - n**2) - 1)
+    else:
+        n -= 2
+        return 0.5 * (math.sqrt(1 - n**2) + 1)</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_in_out_cubic"><code class="name flex">
+<span>def <span class="ident">ease_in_out_cubic</span></span>(<span>t: float)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A cubic tween function that accelerates, reaches the midpoint, and then decelerates.
+t (float): The time progress, starting at 0.0 and ending at 1.0.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_in_out_cubic(t: float):
+    &#34;&#34;&#34;A cubic tween function that accelerates, reaches the midpoint, and then decelerates.
+    t (float): The time progress, starting at 0.0 and ending at 1.0.
+    &#34;&#34;&#34;
+    _check_range(t)
+    t *= 2
+    if t &lt; 1:
+        return 0.5 * t**3
+    else:
+        t -= 2
+        return 0.5 * (t**3 + 2)</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_in_out_elastic"><code class="name flex">
+<span>def <span class="ident">ease_in_out_elastic</span></span>(<span>n, amplitude=1, period=0.5)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_in_out_elastic(n, amplitude=1, period=0.5):
+    _check_range(n)
+    n *= 2
+    if n &lt; 1:
+        return ease_in_elastic(n, amplitude=amplitude, period=period) / 2
+    else:
+        return ease_out_elastic(n - 1, amplitude=amplitude, period=period) / 2 + 0.5</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_in_out_expo"><code class="name flex">
+<span>def <span class="ident">ease_in_out_expo</span></span>(<span>n)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_in_out_expo(n):
+    _check_range(n)
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        n *= 2
+        if n &lt; 1:
+            return 0.5 * 2 ** (10 * (n - 1))
+        else:
+            n -= 1
+            return 0.5 * (-1 * (2 ** (-10 * n)) + 2)</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_in_out_poly"><code class="name flex">
+<span>def <span class="ident">ease_in_out_poly</span></span>(<span>t: float, degree: float = 2)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_in_out_poly(t: float, degree: float = 2):
+    _check_range(t)
+    if not isinstance(degree, (int, float)) or degree &lt; 0:
+        raise ValueError(&#34;degree argument must be a positive number.&#34;)
+    t *= 2
+    if t &lt; 1:
+        return 0.5 * t**degree
+    else:
+        t -= 2
+        return 1 - 0.5 * abs(t**degree)</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_in_out_quad"><code class="name flex">
+<span>def <span class="ident">ease_in_out_quad</span></span>(<span>t)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_in_out_quad(t):
+    _check_range(t)
+    if t &lt; 0.5:
+        return 2 * t**2
+    else:
+        t = t * 2 - 1
+        return -0.5 * (t * (t - 2) - 1)</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_in_out_quart"><code class="name flex">
+<span>def <span class="ident">ease_in_out_quart</span></span>(<span>n)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_in_out_quart(n):
+    _check_range(n)
+    n *= 2
+    if n &lt; 1:
+        return 0.5 * n**4
+    else:
+        n -= 2
+        return -0.5 * (n**4 - 2)</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_in_out_quint"><code class="name flex">
+<span>def <span class="ident">ease_in_out_quint</span></span>(<span>n)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_in_out_quint(n):
+    _check_range(n)
+    n *= 2
+    if n &lt; 1:
+        return 0.5 * n**5
+    else:
+        n -= 2
+        return 0.5 * (n**5 + 2)</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_in_out_sine"><code class="name flex">
+<span>def <span class="ident">ease_in_out_sine</span></span>(<span>n)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_in_out_sine(n):
+    _check_range(n)
+    return -0.5 * (math.cos(math.pi * n) - 1)</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_in_poly"><code class="name flex">
+<span>def <span class="ident">ease_in_poly</span></span>(<span>n, degree=2)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_in_poly(n, degree=2):
+    _check_range(n)
+    if not isinstance(degree, (int, float)) or degree &lt; 0:
+        raise ValueError(&#34;degree argument must be a positive number.&#34;)
+    return n**degree</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_in_quad"><code class="name flex">
+<span>def <span class="ident">ease_in_quad</span></span>(<span>t)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_in_quad(t):
+    _check_range(t)
+    return t**2</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_in_quart"><code class="name flex">
+<span>def <span class="ident">ease_in_quart</span></span>(<span>n)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_in_quart(n):
+    _check_range(n)
+    return n**4</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_in_quint"><code class="name flex">
+<span>def <span class="ident">ease_in_quint</span></span>(<span>n)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_in_quint(n):
+    _check_range(n)
+    return n**5</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_in_sine"><code class="name flex">
+<span>def <span class="ident">ease_in_sine</span></span>(<span>n)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_in_sine(n):
+    _check_range(n)
+    return -1 * math.cos(n * math.pi / 2) + 1</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_out_back"><code class="name flex">
+<span>def <span class="ident">ease_out_back</span></span>(<span>n, s=1.70158)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_out_back(n, s=1.70158):
+    _check_range(n)
+    n -= 1
+    return n * n * ((s + 1) * n + s) + 1</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_out_bounce"><code class="name flex">
+<span>def <span class="ident">ease_out_bounce</span></span>(<span>n)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_out_bounce(n):
+    _check_range(n)
+    if n &lt; (1 / 2.75):
+        return 7.5625 * n * n
+    elif n &lt; (2 / 2.75):
+        n -= 1.5 / 2.75
+        return 7.5625 * n * n + 0.75
+    elif n &lt; (2.5 / 2.75):
+        n -= 2.25 / 2.75
+        return 7.5625 * n * n + 0.9375
+    else:
+        n -= 2.65 / 2.75
+        return 7.5625 * n * n + 0.984375</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_out_circ"><code class="name flex">
+<span>def <span class="ident">ease_out_circ</span></span>(<span>n)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_out_circ(n):
+    _check_range(n)
+    n -= 1
+    return math.sqrt(1 - (n * n))</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_out_cubic"><code class="name flex">
+<span>def <span class="ident">ease_out_cubic</span></span>(<span>n)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_out_cubic(n):
+    _check_range(n)
+    n -= 1
+    return n**3 + 1</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_out_elastic"><code class="name flex">
+<span>def <span class="ident">ease_out_elastic</span></span>(<span>n, amplitude=1, period=0.3)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_out_elastic(n, amplitude=1, period=0.3):
+    _check_range(n)
+    if amplitude &lt; 1:
+        amplitude = 1
+        s = period / 4
+    else:
+        s = period / (2 * math.pi) * math.asin(1 / amplitude)
+    return amplitude * 2 ** (-10 * n) * math.sin((n - s) * (2 * math.pi / period)) + 1</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_out_expo"><code class="name flex">
+<span>def <span class="ident">ease_out_expo</span></span>(<span>n)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_out_expo(n):
+    _check_range(n)
+    if n == 1:
+        return 1
+    else:
+        return -(2 ** (-10 * n)) + 1</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_out_poly"><code class="name flex">
+<span>def <span class="ident">ease_out_poly</span></span>(<span>n, degree=2)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_out_poly(n, degree=2):
+    _check_range(n)
+    if not isinstance(degree, (int, float)) or degree &lt; 0:
+        raise ValueError(&#34;degree argument must be a positive number.&#34;)
+    return 1 - abs((n - 1) ** degree)</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_out_quad"><code class="name flex">
+<span>def <span class="ident">ease_out_quad</span></span>(<span>t)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_out_quad(t):
+    _check_range(t)
+    return -t * (t - 2)</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_out_quart"><code class="name flex">
+<span>def <span class="ident">ease_out_quart</span></span>(<span>n)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_out_quart(n):
+    _check_range(n)
+    n -= 1
+    return -(n**4 - 1)</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_out_quint"><code class="name flex">
+<span>def <span class="ident">ease_out_quint</span></span>(<span>n)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_out_quint(n):
+    _check_range(n)
+    n -= 1
+    return n**5 + 1</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.ease_out_sine"><code class="name flex">
+<span>def <span class="ident">ease_out_sine</span></span>(<span>n)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ease_out_sine(n):
+    _check_range(n)
+    return math.sin(n * math.pi / 2)</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.get_point_on_line"><code class="name flex">
+<span>def <span class="ident">get_point_on_line</span></span>(<span>x1, y1, x2, y2, t)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_point_on_line(x1, y1, x2, y2, t):
+    x = ((x2 - x1) * t) + x1
+    y = ((y2 - y1) * t) + y1
+    return (x, y)</code></pre>
+</details>
+</dd>
+<dt id="pd.tween.linear"><code class="name flex">
+<span>def <span class="ident">linear</span></span>(<span>t)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def linear(t):
+    _check_range(t)
+    return t</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="pd.tween.Easings"><code class="flex name class">
+<span>class <span class="ident">Easings</span></span>
+<span>(</span><span>*args, **kwds)</span>
+</code></dt>
+<dd>
+<div class="desc"><p><a href="https://easings.net/">https://easings.net/</a></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Easings(Enum):
+    &#34;&#34;&#34; https://easings.net/ &#34;&#34;&#34;
+    EASE_IN_BACK = &#34;ease_in_back&#34;
+    EASE_IN_BOUNCE = &#34;ease_in_bounce&#34;
+    EASE_IN_CIRC = &#34;ease_in_circ&#34;
+    EASE_IN_CUBIC = &#34;ease_in_cubic&#34;
+    EASE_IN_ELASTIC = &#34;ease_in_elastic&#34;
+    EASE_IN_EXPO = &#34;ease_in_expo&#34;
+    EASE_IN_OUT_BACK = &#34;ease_in_out_back&#34;
+    EASE_IN_OUT_BOUNCE = &#34;ease_in_out_bounce&#34;
+    EASE_IN_OUT_CIRC = &#34;ease_in_out_circ&#34;
+    EASE_IN_OUT_CUBIC = &#34;ease_in_out_cubic&#34;
+    EASE_IN_OUT_ELASTIC = &#34;ease_in_out_elastic&#34;
+    EASE_IN_OUT_EXPO = &#34;ease_in_out_expo&#34;
+    EASE_IN_OUT_POLY = &#34;ease_in_out_poly&#34;
+    EASE_IN_OUT_QUAD = &#34;ease_in_out_quad&#34;
+    EASE_IN_OUT_QUART = &#34;ease_in_out_quart&#34;
+    EASE_IN_OUT_QUINT = &#34;ease_in_out_quint&#34;
+    EASE_IN_OUT_SINE = &#34;ease_in_out_sine&#34;
+    EASE_IN_POLY = &#34;ease_in_poly&#34;
+    EASE_IN_QUAD = &#34;ease_in_quad&#34;
+    EASE_IN_QUART = &#34;ease_in_quart&#34;
+    EASE_IN_QUINT = &#34;ease_in_quint&#34;
+    EASE_IN_SINE = &#34;ease_in_sine&#34;
+    EASE_OUT_BACK = &#34;ease_out_back&#34;
+    EASE_OUT_BOUNCE = &#34;ease_out_bounce&#34;
+    EASE_OUT_CIRC = &#34;ease_out_circ&#34;
+    EASE_OUT_CUBIC = &#34;ease_out_cubic&#34;
+    EASE_OUT_ELASTIC = &#34;ease_out_elastic&#34;
+    EASE_OUT_EXPO = &#34;ease_out_expo&#34;
+    EASE_OUT_POLY = &#34;ease_out_poly&#34;
+    EASE_OUT_QUAD = &#34;ease_out_quad&#34;
+    EASE_OUT_QUART = &#34;ease_out_quart&#34;
+    EASE_OUT_QUINT = &#34;ease_out_quint&#34;
+    EASE_OUT_SINE = &#34;ease_out_sine&#34;
+    LINEAR = &#34;linear&#34;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="pd.tween.Easings.EASE_IN_BACK"><code class="name">var <span class="ident">EASE_IN_BACK</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_IN_BOUNCE"><code class="name">var <span class="ident">EASE_IN_BOUNCE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_IN_CIRC"><code class="name">var <span class="ident">EASE_IN_CIRC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_IN_CUBIC"><code class="name">var <span class="ident">EASE_IN_CUBIC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_IN_ELASTIC"><code class="name">var <span class="ident">EASE_IN_ELASTIC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_IN_EXPO"><code class="name">var <span class="ident">EASE_IN_EXPO</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_IN_OUT_BACK"><code class="name">var <span class="ident">EASE_IN_OUT_BACK</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_IN_OUT_BOUNCE"><code class="name">var <span class="ident">EASE_IN_OUT_BOUNCE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_IN_OUT_CIRC"><code class="name">var <span class="ident">EASE_IN_OUT_CIRC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_IN_OUT_CUBIC"><code class="name">var <span class="ident">EASE_IN_OUT_CUBIC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_IN_OUT_ELASTIC"><code class="name">var <span class="ident">EASE_IN_OUT_ELASTIC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_IN_OUT_EXPO"><code class="name">var <span class="ident">EASE_IN_OUT_EXPO</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_IN_OUT_POLY"><code class="name">var <span class="ident">EASE_IN_OUT_POLY</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_IN_OUT_QUAD"><code class="name">var <span class="ident">EASE_IN_OUT_QUAD</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_IN_OUT_QUART"><code class="name">var <span class="ident">EASE_IN_OUT_QUART</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_IN_OUT_QUINT"><code class="name">var <span class="ident">EASE_IN_OUT_QUINT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_IN_OUT_SINE"><code class="name">var <span class="ident">EASE_IN_OUT_SINE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_IN_POLY"><code class="name">var <span class="ident">EASE_IN_POLY</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_IN_QUAD"><code class="name">var <span class="ident">EASE_IN_QUAD</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_IN_QUART"><code class="name">var <span class="ident">EASE_IN_QUART</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_IN_QUINT"><code class="name">var <span class="ident">EASE_IN_QUINT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_IN_SINE"><code class="name">var <span class="ident">EASE_IN_SINE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_OUT_BACK"><code class="name">var <span class="ident">EASE_OUT_BACK</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_OUT_BOUNCE"><code class="name">var <span class="ident">EASE_OUT_BOUNCE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_OUT_CIRC"><code class="name">var <span class="ident">EASE_OUT_CIRC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_OUT_CUBIC"><code class="name">var <span class="ident">EASE_OUT_CUBIC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_OUT_ELASTIC"><code class="name">var <span class="ident">EASE_OUT_ELASTIC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_OUT_EXPO"><code class="name">var <span class="ident">EASE_OUT_EXPO</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_OUT_POLY"><code class="name">var <span class="ident">EASE_OUT_POLY</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_OUT_QUAD"><code class="name">var <span class="ident">EASE_OUT_QUAD</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_OUT_QUART"><code class="name">var <span class="ident">EASE_OUT_QUART</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_OUT_QUINT"><code class="name">var <span class="ident">EASE_OUT_QUINT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.EASE_OUT_SINE"><code class="name">var <span class="ident">EASE_OUT_SINE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pd.tween.Easings.LINEAR"><code class="name">var <span class="ident">LINEAR</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="pd" href="index.html">pd</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="pd.tween.ease_in_back" href="#pd.tween.ease_in_back">ease_in_back</a></code></li>
+<li><code><a title="pd.tween.ease_in_bounce" href="#pd.tween.ease_in_bounce">ease_in_bounce</a></code></li>
+<li><code><a title="pd.tween.ease_in_circ" href="#pd.tween.ease_in_circ">ease_in_circ</a></code></li>
+<li><code><a title="pd.tween.ease_in_cubic" href="#pd.tween.ease_in_cubic">ease_in_cubic</a></code></li>
+<li><code><a title="pd.tween.ease_in_elastic" href="#pd.tween.ease_in_elastic">ease_in_elastic</a></code></li>
+<li><code><a title="pd.tween.ease_in_expo" href="#pd.tween.ease_in_expo">ease_in_expo</a></code></li>
+<li><code><a title="pd.tween.ease_in_out_back" href="#pd.tween.ease_in_out_back">ease_in_out_back</a></code></li>
+<li><code><a title="pd.tween.ease_in_out_bounce" href="#pd.tween.ease_in_out_bounce">ease_in_out_bounce</a></code></li>
+<li><code><a title="pd.tween.ease_in_out_circ" href="#pd.tween.ease_in_out_circ">ease_in_out_circ</a></code></li>
+<li><code><a title="pd.tween.ease_in_out_cubic" href="#pd.tween.ease_in_out_cubic">ease_in_out_cubic</a></code></li>
+<li><code><a title="pd.tween.ease_in_out_elastic" href="#pd.tween.ease_in_out_elastic">ease_in_out_elastic</a></code></li>
+<li><code><a title="pd.tween.ease_in_out_expo" href="#pd.tween.ease_in_out_expo">ease_in_out_expo</a></code></li>
+<li><code><a title="pd.tween.ease_in_out_poly" href="#pd.tween.ease_in_out_poly">ease_in_out_poly</a></code></li>
+<li><code><a title="pd.tween.ease_in_out_quad" href="#pd.tween.ease_in_out_quad">ease_in_out_quad</a></code></li>
+<li><code><a title="pd.tween.ease_in_out_quart" href="#pd.tween.ease_in_out_quart">ease_in_out_quart</a></code></li>
+<li><code><a title="pd.tween.ease_in_out_quint" href="#pd.tween.ease_in_out_quint">ease_in_out_quint</a></code></li>
+<li><code><a title="pd.tween.ease_in_out_sine" href="#pd.tween.ease_in_out_sine">ease_in_out_sine</a></code></li>
+<li><code><a title="pd.tween.ease_in_poly" href="#pd.tween.ease_in_poly">ease_in_poly</a></code></li>
+<li><code><a title="pd.tween.ease_in_quad" href="#pd.tween.ease_in_quad">ease_in_quad</a></code></li>
+<li><code><a title="pd.tween.ease_in_quart" href="#pd.tween.ease_in_quart">ease_in_quart</a></code></li>
+<li><code><a title="pd.tween.ease_in_quint" href="#pd.tween.ease_in_quint">ease_in_quint</a></code></li>
+<li><code><a title="pd.tween.ease_in_sine" href="#pd.tween.ease_in_sine">ease_in_sine</a></code></li>
+<li><code><a title="pd.tween.ease_out_back" href="#pd.tween.ease_out_back">ease_out_back</a></code></li>
+<li><code><a title="pd.tween.ease_out_bounce" href="#pd.tween.ease_out_bounce">ease_out_bounce</a></code></li>
+<li><code><a title="pd.tween.ease_out_circ" href="#pd.tween.ease_out_circ">ease_out_circ</a></code></li>
+<li><code><a title="pd.tween.ease_out_cubic" href="#pd.tween.ease_out_cubic">ease_out_cubic</a></code></li>
+<li><code><a title="pd.tween.ease_out_elastic" href="#pd.tween.ease_out_elastic">ease_out_elastic</a></code></li>
+<li><code><a title="pd.tween.ease_out_expo" href="#pd.tween.ease_out_expo">ease_out_expo</a></code></li>
+<li><code><a title="pd.tween.ease_out_poly" href="#pd.tween.ease_out_poly">ease_out_poly</a></code></li>
+<li><code><a title="pd.tween.ease_out_quad" href="#pd.tween.ease_out_quad">ease_out_quad</a></code></li>
+<li><code><a title="pd.tween.ease_out_quart" href="#pd.tween.ease_out_quart">ease_out_quart</a></code></li>
+<li><code><a title="pd.tween.ease_out_quint" href="#pd.tween.ease_out_quint">ease_out_quint</a></code></li>
+<li><code><a title="pd.tween.ease_out_sine" href="#pd.tween.ease_out_sine">ease_out_sine</a></code></li>
+<li><code><a title="pd.tween.get_point_on_line" href="#pd.tween.get_point_on_line">get_point_on_line</a></code></li>
+<li><code><a title="pd.tween.linear" href="#pd.tween.linear">linear</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="pd.tween.Easings" href="#pd.tween.Easings">Easings</a></code></h4>
+<ul class="two-column">
+<li><code><a title="pd.tween.Easings.EASE_IN_BACK" href="#pd.tween.Easings.EASE_IN_BACK">EASE_IN_BACK</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_IN_BOUNCE" href="#pd.tween.Easings.EASE_IN_BOUNCE">EASE_IN_BOUNCE</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_IN_CIRC" href="#pd.tween.Easings.EASE_IN_CIRC">EASE_IN_CIRC</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_IN_CUBIC" href="#pd.tween.Easings.EASE_IN_CUBIC">EASE_IN_CUBIC</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_IN_ELASTIC" href="#pd.tween.Easings.EASE_IN_ELASTIC">EASE_IN_ELASTIC</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_IN_EXPO" href="#pd.tween.Easings.EASE_IN_EXPO">EASE_IN_EXPO</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_IN_OUT_BACK" href="#pd.tween.Easings.EASE_IN_OUT_BACK">EASE_IN_OUT_BACK</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_IN_OUT_BOUNCE" href="#pd.tween.Easings.EASE_IN_OUT_BOUNCE">EASE_IN_OUT_BOUNCE</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_IN_OUT_CIRC" href="#pd.tween.Easings.EASE_IN_OUT_CIRC">EASE_IN_OUT_CIRC</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_IN_OUT_CUBIC" href="#pd.tween.Easings.EASE_IN_OUT_CUBIC">EASE_IN_OUT_CUBIC</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_IN_OUT_ELASTIC" href="#pd.tween.Easings.EASE_IN_OUT_ELASTIC">EASE_IN_OUT_ELASTIC</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_IN_OUT_EXPO" href="#pd.tween.Easings.EASE_IN_OUT_EXPO">EASE_IN_OUT_EXPO</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_IN_OUT_POLY" href="#pd.tween.Easings.EASE_IN_OUT_POLY">EASE_IN_OUT_POLY</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_IN_OUT_QUAD" href="#pd.tween.Easings.EASE_IN_OUT_QUAD">EASE_IN_OUT_QUAD</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_IN_OUT_QUART" href="#pd.tween.Easings.EASE_IN_OUT_QUART">EASE_IN_OUT_QUART</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_IN_OUT_QUINT" href="#pd.tween.Easings.EASE_IN_OUT_QUINT">EASE_IN_OUT_QUINT</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_IN_OUT_SINE" href="#pd.tween.Easings.EASE_IN_OUT_SINE">EASE_IN_OUT_SINE</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_IN_POLY" href="#pd.tween.Easings.EASE_IN_POLY">EASE_IN_POLY</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_IN_QUAD" href="#pd.tween.Easings.EASE_IN_QUAD">EASE_IN_QUAD</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_IN_QUART" href="#pd.tween.Easings.EASE_IN_QUART">EASE_IN_QUART</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_IN_QUINT" href="#pd.tween.Easings.EASE_IN_QUINT">EASE_IN_QUINT</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_IN_SINE" href="#pd.tween.Easings.EASE_IN_SINE">EASE_IN_SINE</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_OUT_BACK" href="#pd.tween.Easings.EASE_OUT_BACK">EASE_OUT_BACK</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_OUT_BOUNCE" href="#pd.tween.Easings.EASE_OUT_BOUNCE">EASE_OUT_BOUNCE</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_OUT_CIRC" href="#pd.tween.Easings.EASE_OUT_CIRC">EASE_OUT_CIRC</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_OUT_CUBIC" href="#pd.tween.Easings.EASE_OUT_CUBIC">EASE_OUT_CUBIC</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_OUT_ELASTIC" href="#pd.tween.Easings.EASE_OUT_ELASTIC">EASE_OUT_ELASTIC</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_OUT_EXPO" href="#pd.tween.Easings.EASE_OUT_EXPO">EASE_OUT_EXPO</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_OUT_POLY" href="#pd.tween.Easings.EASE_OUT_POLY">EASE_OUT_POLY</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_OUT_QUAD" href="#pd.tween.Easings.EASE_OUT_QUAD">EASE_OUT_QUAD</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_OUT_QUART" href="#pd.tween.Easings.EASE_OUT_QUART">EASE_OUT_QUART</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_OUT_QUINT" href="#pd.tween.Easings.EASE_OUT_QUINT">EASE_OUT_QUINT</a></code></li>
+<li><code><a title="pd.tween.Easings.EASE_OUT_SINE" href="#pd.tween.Easings.EASE_OUT_SINE">EASE_OUT_SINE</a></code></li>
+<li><code><a title="pd.tween.Easings.LINEAR" href="#pd.tween.Easings.LINEAR">LINEAR</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

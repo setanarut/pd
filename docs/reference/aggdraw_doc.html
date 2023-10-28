@@ -1,0 +1,470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> <html data-darkreader-mode=dynamic data-darkreader-scheme=dark><!--
+ Page saved with SingleFile 
+ url: https://web.archive.org/web/20200719080546/https://effbot.org/zone/pythondoc-aggdraw.htm#aggdraw.Draw.text-method 
+ saved date: Fri Jul 21 2023 03:46:39 GMT+0300 (GMT+03:00)
+--><meta charset=utf-8><style class="darkreader darkreader--user-agent" media=screen>.jfk-bubble.gtx-bubble,.captcheck_answer_label>input+img,span#closed_text>img[src^="https://www.gstatic.com/images/branding/googlelogo"],span[data-href^="https://www.hcaptcha.com/"]>#icon,#bit-notification-bar-iframe,::-webkit-calendar-picker-indicator,.sparkline-canvas,.sparkline-mouse-highlight,.search-toolbar-logo,.ia-wordmark{filter:invert(100%) hue-rotate(180deg) contrast(90%)!important}:root{--darkreader-neutral-background:#131516;--darkreader-neutral-text:#d8d4cf;--darkreader-selection-background:#004daa;--darkreader-selection-text:#e8e6e3}:root{}html{background-color:#181a1b!important}html{color-scheme:dark!important}html,body{background-color:#181a1b}html,body{border-color:#736b5e;color:#e8e6e3}a{color:#3391ff}::placeholder{color:#b2aba1}::selection{background-color:#004daa!important;color:#e8e6e3!important}</style><meta name=darkreader content=a66afbfcf185462a93e6f3da0a20dcf9><style class="darkreader darkreader--override" media=screen>::placeholder{opacity:0.5!important}</style>
+<style>@-moz-keyframes bounce_spinningSquaresG{0%{-moz-transform:scale(1);background-color:#000000}100%{-moz-transform:scale(.3) rotate(90deg);background-color:#FFFFFF}}@-webkit-keyframes bounce_spinningSquaresG{0%{-webkit-transform:scale(1);background-color:#000000}100%{-webkit-transform:scale(.3) rotate(90deg);background-color:#FFFFFF}}@-ms-keyframes bounce_spinningSquaresG{0%{-ms-transform:scale(1);background-color:#000000}100%{-ms-transform:scale(.3) rotate(90deg);background-color:#FFFFFF}}@-o-keyframes bounce_spinningSquaresG{0%{-o-transform:scale(1);background-color:#000000}100%{-o-transform:scale(.3) rotate(90deg);background-color:#FFFFFF}}@keyframes bounce_spinningSquaresG{0%{transform:scale(1);background-color:#000000}100%{transform:scale(.3) rotate(90deg);background-color:#FFFFFF}}#wm-ipp-base{padding:0;margin:0;border:none;background:none transparent}#wm-ipp{z-index:2147483647}#wm-ipp,#wm-ipp *{font-family:Lucida Grande,Helvetica,Arial,sans-serif;font-size:12px;line-height:1.2;letter-spacing:0;width:auto;height:auto;max-width:none;max-height:none;min-width:0!important;min-height:0;outline:none;float:none;text-align:left;border:none;color:#000;text-indent:0;position:initial;background:none}#wm-ipp div{display:block}#wm-ipp div{padding:0;margin:0;border:none;border-radius:0;background-color:transparent;background-image:none;height:auto}#wm-ipp #wm-ipp-inside{margin:0 6px;border:5px solid #000;border-top:none;background-color:rgba(255,255,255,0.9);-moz-box-shadow:1px 1px 4px #333;-webkit-box-shadow:1px 1px 4px #333;box-shadow:1px 1px 4px #333;border-radius:0 0 8px 8px}#donato{border-bottom:1px solid #999!important}#donato #donato-base{width:100%;height:100%;margin:0;padding:0;position:absolute;z-index:2147483639}</style><style class="darkreader darkreader--sync" media=screen>@-moz-keyframes bounce_spinningSquaresG{0%{-moz-transform:scale(1);background-color:#000000}100%{-moz-transform:scale(.3) rotate(90deg);background-color:#FFFFFF}}@-webkit-keyframes bounce_spinningSquaresG{0%{-webkit-transform:scale(1);background-color:#000000}100%{-webkit-transform:scale(.3) rotate(90deg);background-color:#FFFFFF}}@-ms-keyframes bounce_spinningSquaresG{0%{-ms-transform:scale(1);background-color:#000000}100%{-ms-transform:scale(.3) rotate(90deg);background-color:#FFFFFF}}@-o-keyframes bounce_spinningSquaresG{0%{-o-transform:scale(1);background-color:#000000}100%{-o-transform:scale(.3) rotate(90deg);background-color:#FFFFFF}}@keyframes bounce_spinningSquaresG{0%{transform:scale(1);background-color:#000000}100%{transform:scale(.3) rotate(90deg);background-color:#FFFFFF}}#wm-ipp-base{padding:0;margin:0;border:none;background:none transparent}#wm-ipp{z-index:2147483647}#wm-ipp,#wm-ipp *{font-family:Lucida Grande,Helvetica,Arial,sans-serif;font-size:12px;line-height:1.2;letter-spacing:0;width:auto;height:auto;max-width:none;max-height:none;min-width:0!important;min-height:0;outline:none;float:none;text-align:left;border:none;color:#000;text-indent:0;position:initial;background:none}#wm-ipp div{display:block}#wm-ipp div{padding:0;margin:0;border:none;border-radius:0;background-color:transparent;background-image:none;height:auto}#wm-ipp #wm-ipp-inside{margin:0 6px;border:5px solid #000;border-top:none;background-color:rgba(255,255,255,0.9);-moz-box-shadow:1px 1px 4px #333;-webkit-box-shadow:1px 1px 4px #333;box-shadow:1px 1px 4px #333;border-radius:0 0 8px 8px}#donato{border-bottom:1px solid #999!important}#donato #donato-base{width:100%;height:100%;margin:0;padding:0;position:absolute;z-index:2147483639}#wm-ipp-base{border-color:initial;background-image:none;background-color:transparent}#wm-ipp,#wm-ipp *{outline-color:initial;border-color:initial;color:rgb(232,230,227);background-image:none;background-color:initial}#wm-ipp div{border-color:initial;background-color:transparent;background-image:none}#wm-ipp #wm-ipp-inside{border-right-color:rgb(140,130,115);border-bottom-color:rgb(140,130,115);border-left-color:rgb(140,130,115);border-top-color:initial;background-color:rgba(24,26,27,0.9);box-shadow:rgb(38,42,43) 1px 1px 4px}#donato{border-bottom-color:rgb(77,83,86)!important}</style>
+<link rel=alternate type=application/rss+xml title=RSS href=https://web.archive.org/web/20200719080546/https://effbot.org/zone/rss.xml><style class="darkreader darkreader--sync" media=screen>body{color:#000}body,div,dl,dt,dd,ul,h1,h2,pre,p{margin:0;padding:0}img{border:0}body{font:13px/1.22 arial,helvetica,clean,sans-serif}pre{font-family:monospace}body{text-align:center}#ft{clear:both}#doc2{margin:auto;text-align:left;min-width:750px}#doc2{width:73.074em}.yui-b{position:relative}#yui-main .yui-b{position:static}#yui-main{width:100%}.yui-t2 #yui-main{float:right;margin-left:-25em}.yui-t2 .yui-b{float:left;width:13.8456em}.yui-t2 #yui-main .yui-b{margin-left:14.8456em}#yui-main .yui-b{float:none;width:auto}.yui-ge .yui-u{float:right;display:inline}.yui-ge div.first{float:left}.yui-ge .yui-u{width:24%}.yui-ge div.first{width:74.2%}#bd:after,.yui-g:after,.yui-gb:after,.yui-gc:after,.yui-gd:after,.yui-ge:after,.yui-gf:after{content:".";display:block;height:0;clear:both;visibility:hidden}#bd,.yui-g,.yui-ge{zoom:1}h2{font-size:123.1%}h1,h2{margin:1em 0}h1,h2{font-weight:bold}dl{margin:1em}ul,dl{margin-left:2em}dl dd{margin-left:1em}p{margin-bottom:1em}BODY{background:#dfd}#doc2{background:#fff}#menu UL{padding-left:10px;margin:0;width:150px}#menu LI{font-family:Georgia;list-style:none;margin:0;padding:0.25em}#menu LI A{text-decoration:none}#hd{font-family:Georgia;font-size:120%}#bd{padding-top:2em}#ft{font-size:100%;color:#ccc;padding-left:10px;padding-top:1em;padding-bottom:0.5em}#ft A:link,A:hover{color:#ccc}#ft A:visited{color:#ccc}.content{font-family:Georgia;font-size:120%;line-height:150%;padding-left:0px;padding-right:10px}H1,H2{font-family:Georgia;line-height:120%;color:#084}PRE{font-size:90%;line-height:120%;overflow-x:auto;overflow-y:hidden;width:38em;margin-left:10px;padding-bottom:1em}A:link,A:hover{color:#084}A:visited{color:#444}.maintitle{font-size:240%;margin-top:0;margin-bottom:0.5em}.pycomment{color:#556b2f;font-style:italic}.pystring{color:#000080}body{color:rgb(232,230,227)}img{border-color:initial}body{background-image:initial;background-color:rgb(18,71,0)}#doc2{background-image:initial;background-color:rgb(24,26,27)}#menu li{list-style-image:initial}#menu li a{text-decoration-color:initial}#ft{color:rgb(200,195,188)}#ft a:link,a:hover{color:rgb(200,195,188)}#ft a:visited{color:rgb(200,195,188)}h1,h2{color:rgb(109,255,182)}a:link,a:hover{color:rgb(109,255,182)}a:visited{color:rgb(189,183,175)}.pycomment{color:rgb(184,207,145)}.pystring{color:rgb(127,174,255)}</style><title>The aggdraw&nbsp;Module</title><link rel="shortcut icon" href=data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAACAAAAAgIAAgAAAAIAAgACAgAAAwMDAAICAgAAAAP8AAP8AAAD//wD/AAAA/wD/AP//AAD///8AIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA><style>.sf-hidden{display:none!important}</style><link rel=canonical href=https://web.archive.org/web/20200719080546/https://effbot.org/zone/pythondoc-aggdraw.htm#aggdraw.Draw.text-method><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:; frame-src 'self' data:;"><style>img[src="data:,"],source[src="data:,"]{display:none!important}</style><body data-page-id=228>
+<div id=wm-ipp-base lang=en style=display:block;direction:ltr;height:1px><template shadowroot=closed><div id=wm-ipp style=position:fixed;left:0;top:0;right:0>
+<div id=donato style=position:relative;width:100%>
+ <div id=donato-base>
+ <iframe id=donato-if scrolling=no frameborder=0 style=width:100%;height:100%></iframe>
+ </div>
+</div><div id=wm-ipp-inside style=display:none>
+ 
+ </div></div><style>.__wb_overlay{filter:alpha(opacity=60);opacity:0.6;-moz-opacity:0.6;opacity:0.6;background-color:#000;position:fixed;width:100%;height:100%;top:0px;left:0px;padding:0px!important;border:0px!important;margin:0px!important;border-radius:0px!important;z-index:2147483643!important}#__wb_record_overlay_div{cursor:wait!important}.__wb_record_content{opacity:1.0;position:fixed;top:50%;left:50%;margin:0px!important;padding:0px!important;background-color:#ffffff!important;border-radius:8px;z-index:2147483644!important;box-shadow:0 0 30px 5px #000;-moz-box-shadow:0 0 30px 5px #000;-webkit-box-shadow:0 0 30px 5px #000}#__wb_record_content_loader{cursor:wait!important;padding-top:30px!important;margin-left:-287px!important;margin-top:-177px!important;width:574px!important;height:355px!important}#__wb_record_content_done{margin-left:-427px!important;margin-top:-177px!important;width:855px!important;height:355px!important}.__wb_record_content>*{margin:auto!important;display:block!important;text-align:center!important;font-family:"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif!important}.__wb_record_content>wb_h1{font-size:36px!important;color:#222!important;margin:0px 0px 0px 0px!important;padding:0px!important;line-height:2em;font-weight:normal!important;width:auto!important;height:auto!important}.__wb_record_content>wb_p{font-size:17px!important;color:#222!important;margin:8px 0px 8px 0px!important;padding:0px!important;line-height:2em}.__wb_record_content>#_wb_logo{margin-bottom:10px!important}.__wb_record_content>#_wb_spinner{margin-top:30px!important;margin-bottom:30px!important}.__wb_record_content>#_wb_curr_url{text-decoration:underline!important;font-weight:bold!important}#__wb_record_content_done>#__wb_link{font-size:20px!important;border:1px!important;border-color:#aaa!important;border-style:solid!important;padding:3px!important;text-align:center!important;width:80%!important;height:auto!important}#__wb_record_content_done>#__wb_link:focus{outline:0px!important;border-color:#428bca!important}#__wb_record_content_done>#__wb_donate_close{font-size:18px!important;width:auto!important;float:right;display:inline-block;margin:0px!important;padding:8px 8px 0px 0px!important}#__wb_donate_close>#__wb_record_done_close{cursor:pointer!important;display:inline-block;vertical-align:bottom!important}#__wb_record_content_done>#__wb_donate_close a{color:#428bca!important}#__wb_record_content_done>#__wb_donate_close a:link{color:#428bca!important;text-decoration:none!important;margin-right:16px!important}#__wb_record_content_done>#__wb_donate_close a:visited{color:#428bca!important}#__wb_record_content_done>#__wb_donate_close a:hover{color:#00B1F7!important}#__wb_spinningSquaresG{position:relative;width:240px;height:20px;padding:0px!important;margin:30px 0px 30px 160px!important;border:0px!important;border-radius:0px!important}.__wb_spinningSquaresG{margin:0px!important;padding:0px!important;border:0px!important;border-radius:0px!important;position:absolute;top:0;background-color:#000000;width:22px;height:22px;-moz-animation-name:bounce_spinningSquaresG;-moz-animation-duration:1.9s;-moz-animation-iteration-count:infinite;-moz-animation-direction:linear;-moz-transform:scale(.3);-webkit-animation-name:bounce_spinningSquaresG;-webkit-animation-duration:1.9s;-webkit-animation-iteration-count:infinite;-webkit-animation-direction:linear;-webkit-transform:scale(.3);-ms-animation-name:bounce_spinningSquaresG;-ms-animation-duration:1.9s;-ms-animation-iteration-count:infinite;-ms-animation-direction:linear;-ms-transform:scale(.3);-o-animation-name:bounce_spinningSquaresG;-o-animation-duration:1.9s;-o-animation-iteration-count:infinite;-o-animation-direction:linear;-o-transform:scale(.3);animation-name:bounce_spinningSquaresG;animation-duration:1.9s;animation-iteration-count:infinite;animation-direction:linear;transform:scale(.3)}#__wb_spinningSquaresG_1{left:0;-moz-animation-delay:0.76s;-webkit-animation-delay:0.76s;-ms-animation-delay:0.76s;-o-animation-delay:0.76s;animation-delay:0.76s}#__wb_spinningSquaresG_2{left:30px;-moz-animation-delay:0.95s;-webkit-animation-delay:0.95s;-ms-animation-delay:0.95s;-o-animation-delay:0.95s;animation-delay:0.95s}#__wb_spinningSquaresG_3{left:60px;-moz-animation-delay:1.14s;-webkit-animation-delay:1.14s;-ms-animation-delay:1.14s;-o-animation-delay:1.14s;animation-delay:1.14s}#__wb_spinningSquaresG_4{left:90px;-moz-animation-delay:1.33s;-webkit-animation-delay:1.33s;-ms-animation-delay:1.33s;-o-animation-delay:1.33s;animation-delay:1.33s}#__wb_spinningSquaresG_5{left:120px;-moz-animation-delay:1.52s;-webkit-animation-delay:1.52s;-ms-animation-delay:1.52s;-o-animation-delay:1.52s;animation-delay:1.52s}#__wb_spinningSquaresG_6{left:150px;-moz-animation-delay:1.71s;-webkit-animation-delay:1.71s;-ms-animation-delay:1.71s;-o-animation-delay:1.71s;animation-delay:1.71s}#__wb_spinningSquaresG_7{left:180px;-moz-animation-delay:1.9s;-webkit-animation-delay:1.9s;-ms-animation-delay:1.9s;-o-animation-delay:1.9s;animation-delay:1.9s}#__wb_spinningSquaresG_8{left:210px;-moz-animation-delay:2.09s;-webkit-animation-delay:2.09s;-ms-animation-delay:2.09s;-o-animation-delay:2.09s;animation-delay:2.09s}@-moz-keyframes bounce_spinningSquaresG{0%{-moz-transform:scale(1);background-color:#000000}100%{-moz-transform:scale(.3) rotate(90deg);background-color:#FFFFFF}}@-webkit-keyframes bounce_spinningSquaresG{0%{-webkit-transform:scale(1);background-color:#000000}100%{-webkit-transform:scale(.3) rotate(90deg);background-color:#FFFFFF}}@-ms-keyframes bounce_spinningSquaresG{0%{-ms-transform:scale(1);background-color:#000000}100%{-ms-transform:scale(.3) rotate(90deg);background-color:#FFFFFF}}@-o-keyframes bounce_spinningSquaresG{0%{-o-transform:scale(1);background-color:#000000}100%{-o-transform:scale(.3) rotate(90deg);background-color:#FFFFFF}}@keyframes bounce_spinningSquaresG{0%{transform:scale(1);background-color:#000000}100%{transform:scale(.3) rotate(90deg);background-color:#FFFFFF}}#wm-ipp-base{height:65px;padding:0;margin:0;border:none;background:none transparent}#wm-ipp{z-index:2147483647}#wm-ipp,#wm-ipp *{font-family:Lucida Grande,Helvetica,Arial,sans-serif;font-size:12px;line-height:1.2;letter-spacing:0;width:auto;height:auto;max-width:none;max-height:none;min-width:0!important;min-height:0;outline:none;float:none;text-align:left;border:none;color:#000;text-indent:0;position:initial;background:none}#wm-ipp div,#wm-ipp canvas{display:block}#wm-ipp div,#wm-ipp tr,#wm-ipp td,#wm-ipp a,#wm-ipp form{padding:0;margin:0;border:none;border-radius:0;background-color:transparent;background-image:none;height:auto}#wm-ipp table{border:none;border-collapse:collapse;margin:0;padding:0;width:auto;font-size:inherit}#wm-ipp form input{padding:1px!important;height:auto;display:inline;margin:0;color:#000;background:none #fff;border:1px solid #666}#wm-ipp form input[type=submit]{padding:0 8px!important;margin:1px 0 1px 5px!important;width:auto!important;border:1px solid #000!important;background:#fff!important;color:#000!important}#wm-ipp form input[type=submit]:hover{background:#eee!important;cursor:pointer!important}#wm-ipp form input[type=submit]:active{transform:translateY(1px)}#wm-ipp a{display:inline}#wm-ipp a:hover{text-decoration:underline}#wm-ipp a.wm-btn:hover{text-decoration:none;color:#ff0!important}#wm-ipp a.wm-btn:hover span{color:#ff0!important}#wm-ipp #wm-ipp-inside{margin:0 6px;border:5px solid #000;border-top:none;background-color:rgba(255,255,255,0.9);-moz-box-shadow:1px 1px 4px #333;-webkit-box-shadow:1px 1px 4px #333;box-shadow:1px 1px 4px #333;border-radius:0 0 8px 8px}#wm-ipp #wm-logo{padding:0 10px;vertical-align:middle;min-width:100px;flex:0 0 100px}#wm-ipp .c{padding-left:4px}#wm-ipp .c .u{margin-top:4px!important}#wm-ipp .n{padding:0 0 0 5px!important;vertical-align:bottom}#wm-ipp .n a{text-decoration:none;color:#33f;font-weight:bold}#wm-ipp .n .b{padding:0 6px 0 0!important;text-align:right!important;overflow:visible;white-space:nowrap;color:#99a;vertical-align:middle}#wm-ipp .n .y .b{padding:0 6px 2px 0!important}#wm-ipp .n .c{background:#000;color:#ff0;font-weight:bold;padding:0!important;text-align:center}#wm-ipp.hi .n td.c{color:#ec008c}#wm-ipp .n td.f{padding:0 0 0 6px!important;text-align:left!important;overflow:visible;white-space:nowrap;color:#99a;vertical-align:middle}#wm-ipp .n tr.m td{text-transform:uppercase;white-space:nowrap;padding:2px 0}#wm-ipp .c .s{padding:0 5px 0 0!important;vertical-align:bottom}#wm-ipp #wm-nav-captures{white-space:nowrap}#wm-ipp .c .s a.t{color:#33f;font-weight:bold;line-height:1.8}#wm-ipp .c .s div.r{color:#666;font-size:9px;white-space:nowrap}#wm-ipp .c .k{padding-bottom:1px}#wm-ipp .c .s{padding:0 5px 2px 0!important}#wm-ipp td#displayMonthEl{padding:2px 0!important}#wm-ipp td#displayYearEl{padding:0 0 2px 0!important}div#wm-ipp-sparkline{position:relative;white-space:nowrap;background-color:#fff;cursor:pointer;line-height:0.9}#sparklineImgId,#wm-sparkline-canvas{position:relative;z-index:9012;max-width:none}#wm-ipp-sparkline div.yt{position:absolute;z-index:9010!important;background-color:#ff0!important;top:0}#wm-ipp-sparkline div.mt{position:absolute;z-index:9013!important;background-color:#ec008c!important;top:0}#wm-ipp .r{margin-left:4px}#wm-ipp .r a{color:#33f;border:none;position:relative;background-color:transparent;background-repeat:no-repeat!important;background-position:100% 100%!important;text-decoration:none}#wm-ipp #wm-capinfo{border-radius:0 0 4px 4px}#wm-ipp #wm-capinfo .c-logo{display:block;float:left;margin-right:3px;width:90px;min-height:90px;max-height:290px;border-radius:45px;overflow:hidden;background-position:50%;background-size:auto 90px;box-shadow:0 0 2px 2px rgba(208,208,208,128) inset}#wm-ipp #wm-capinfo .c-logo span{display:inline-block}#wm-ipp #wm-capinfo .c-logo img{height:90px;position:relative;left:-50%}#wm-ipp #wm-capinfo .wm-title{font-size:130%}#wm-ipp #wm-capinfo a.wm-selector{display:inline-block;color:#aaa;text-decoration:none!important;padding:2px 8px}#wm-ipp #wm-capinfo a.wm-selector.selected{background-color:#666}#wm-ipp #wm-capinfo a.wm-selector:hover{color:#fff}#wm-ipp #wm-capinfo.notice-only #wm-capinfo-collected-by,#wm-ipp #wm-capinfo.notice-only #wm-capinfo-timestamps{display:none}#wm-ipp #wm-capinfo #wm-capinfo-notice .wm-capinfo-content{background-color:#ff0;padding:5px;font-size:14px;text-align:center}#wm-ipp #wm-capinfo #wm-capinfo-notice .wm-capinfo-content *{font-size:14px;text-align:center}#wm-ipp #wm-expand{right:1px;bottom:-1px;color:#ffffff;background-color:#666!important;padding:0 5px 0 3px!important;border-radius:3px 3px 0 0!important}#wm-ipp #wm-expand span{color:#ffffff}#wm-ipp #wm-expand #wm-expand-icon{display:inline-block;transition:transform 0.5s;transform-origin:50% 45%}#wm-ipp #wm-expand.wm-open #wm-expand-icon{transform:rotate(180deg)}#wm-ipp #wmtb{text-align:right}#wm-ipp #wmtb #wmtbURL{width:calc(100% - 45px)}#wm-ipp #wm-graph-anchor{border-right:1px solid #ccc}html.wb-highlight{box-shadow:inset 0 0 0 3px #a50e3a!important}.wb-highlight{outline:3px solid #a50e3a!important}#wm-ipp-print{display:none!important}@media (max-width:414px){#wm-ipp .xxs{display:none!important}}@media (min-width:1055px){#wm-ipp #wm-graph-anchor{display:block!important}}@media (max-width:1054px){#wm-ipp #wm-graph-anchor{display:none!important}}@media (max-width:1163px){#wm-logo{display:none!important}}#wm-btns{white-space:nowrap;margin-top:-2px}#wm-btns #wm-save-snapshot-open{margin-right:7px;top:-6px}#wm-btns #wm-sign-in{box-sizing:content-box;display:none;margin-right:7px;top:-8px;border:2px #000 solid;border-radius:14px;padding-right:2px;padding-bottom:2px;width:11px;height:11px}#wm-btns #wm-sign-in>.iconochive-person{font-size:12.5px}#wm-save-snapshot-open>.iconochive-web{color:#000;font-size:160%}#wm-ipp #wm-share{display:flex;align-items:flex-end;justify-content:space-between}#wm-share>#wm-screenshot{display:inline-block;margin-right:3px;visibility:hidden}#wm-screenshot>.iconochive-image{color:#000;font-size:160%}#wm-share>#wm-video{display:inline-block;margin-right:3px;visibility:hidden}#wm-video>.iconochive-movies{color:#000;display:inline-block;font-size:150%;margin-bottom:2px}#wm-btns #wm-save-snapshot-in-progress{display:none;font-size:160%;opacity:0.5;position:relative;margin-right:7px;top:-5px}#wm-btns #wm-save-snapshot-success{display:none;color:green;position:relative;top:-7px}#wm-btns #wm-save-snapshot-fail{display:none;color:red;position:relative;top:-7px}.wm-icon-screen-shot{background:url(data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjIwIiB2aWV3Qm94PSIwIDAgMjQgMjAiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Im0wIDBoMjR2MjBoLTI0eiIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Im0xOC41NzIxNTI1IDE1Ljg3MzEzMTRoLTIuMjEzNzUxdi0yLjE2MTAwNDNoMi4yMTM3NTF6bS0zLjI2NDc3MDMgMGgtMi4yMTQ5MDI2di0yLjE2MTAwNDNoMi4yMTQ5MDI2em0zLjEyNjU2OTItMTEuNTY5OTY0Mjl2NS44MjU0MDU5OSAxLjUyNTI3OTNoLTE2Ljg2NjI5MDQ1di0xLjUyNTI3OTMtNS44MjU0MDU5OXptLTYuNDc5MDk3MSAxMS41Njk5NjQyOWgtMTAuMzU0NDg1NzZ2LTIuMTE2MDg4OWgxMC4zNTQ0ODU3NnptLTExLjk1NDg1NDMtMTMuMDczMTMxNHY2Ljc0NDIxMjgzIDcuNzIyNDQ2MTdoMjB2LTcuNzIyNDQ2MTctNi43NDQyMTI4M3oiIGZpbGw9IiMzMzMiIGZpbGwtcnVsZT0ibm9uemVybyIgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgLTEgMCAxOC4wNjcpIi8+PHJlY3QgZmlsbD0iIzMzMyIgaGVpZ2h0PSIxMCIgcng9IjEiIHN0cm9rZT0iIzMzMyIgd2lkdGg9IjE0LjkwNiIgeD0iOCIgeT0iOSIvPjxjaXJjbGUgY3g9IjE1LjQ1MyIgY3k9IjE0IiBmaWxsPSIjZmZmIiByPSIzLjQ5MSIvPjxjaXJjbGUgY3g9IjE1LjQ1MyIgY3k9IjE0IiBmaWxsPSIjMzMzIiByPSIxLjYwNCIvPjwvZz48L3N2Zz4=)no-repeat!important;background-size:contain!important;width:22px!important;height:19px!important;display:inline-block}#donato{height:0;margin:0;padding:0;border-bottom:1px solid #999!important}body.wm-modal{height:auto!important;overflow:hidden!important}#donato #donato-base{width:100%;height:100%;margin:0;padding:0;position:absolute;z-index:2147483639}body.wm-modal #donato #donato-base{position:fixed;top:0;left:0;right:0;bottom:0;z-index:2147483640}.wb-autocomplete-suggestions{font-family:Lucida Grande,Helvetica,Arial,sans-serif;font-size:12px;text-align:left;cursor:default;border:1px solid #ccc;border-top:0;background:#fff;box-shadow:-1px 1px 3px rgba(0,0,0,.1);position:absolute;display:none;z-index:2147483647;max-height:254px;overflow:hidden;overflow-y:auto;box-sizing:border-box}.wb-autocomplete-suggestion{position:relative;padding:0 .6em;line-height:23px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:1.02em;color:#333}.wb-autocomplete-suggestion b{font-weight:bold}.wb-autocomplete-suggestion.selected{background:#f0f0f0}</style><style>[class^="iconochive-"],[class*=" iconochive-"]{font-family:"Iconochive-Regular"!important;speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.iconochive-Uplevel:before{content:"↵"}.iconochive-exit:before{content:"🚣"}.iconochive-beta:before{content:"β"}.iconochive-logo:before{content:"🏛"}.iconochive-audio:before{content:"🕨"}.iconochive-movies:before{content:"🎞"}.iconochive-software:before{content:"💾"}.iconochive-texts:before{content:"🕮"}.iconochive-etree:before{content:"🎤"}.iconochive-image:before{content:"🖼"}.iconochive-web:before{content:"🗔"}.iconochive-collection:before{content:"∑"}.iconochive-folder:before{content:"📂"}.iconochive-data:before{content:"🗃"}.iconochive-tv:before{content:"📺"}.iconochive-article:before{content:"🗏"}.iconochive-question:before{content:"⍰"}.iconochive-question-dark:before{content:"?"}.iconochive-info:before{content:"i"}.iconochive-info-small:before{content:"ⓘ"}.iconochive-comment:before{content:"🗩"}.iconochive-comments:before{content:"🗪"}.iconochive-person:before{content:"👤"}.iconochive-people:before{content:"👥"}.iconochive-eye:before{content:"👁"}.iconochive-rss:before{content:"∞"}.iconochive-time:before{content:"🕑"}.iconochive-quote:before{content:"❝"}.iconochive-disc:before{content:"💿"}.iconochive-tv-commercial:before{content:"💰"}.iconochive-search:before{content:"🔍"}.iconochive-search-star:before{content:"✽"}.iconochive-tiles:before{content:"⊞"}.iconochive-list:before{content:"⇶"}.iconochive-list-bulleted:before{content:"⌗"}.iconochive-latest:before{content:"∈"}.iconochive-left:before{content:"˂"}.iconochive-right:before{content:"˃"}.iconochive-left-solid:before{content:"◂"}.iconochive-right-solid:before{content:"▸"}.iconochive-up-solid:before{content:"▴"}.iconochive-down-solid:before{content:"▾"}.iconochive-dot:before{content:"⏤"}.iconochive-dots:before{content:"▦"}.iconochive-columns:before{content:"▯"}.iconochive-sort:before{content:"⇕"}.iconochive-atoz:before{content:"🔤"}.iconochive-ztoa:before{content:"🔥"}.iconochive-upload:before{content:"📤"}.iconochive-download:before{content:"📥"}.iconochive-favorite:before{content:"★"}.iconochive-heart:before{content:"♥"}.iconochive-play:before{content:"▶"}.iconochive-play-framed:before{content:"🎬"}.iconochive-fullscreen:before{content:"⛶"}.iconochive-mute:before{content:"🔇"}.iconochive-unmute:before{content:"🔊"}.iconochive-share:before{content:"🎁"}.iconochive-edit:before{content:"✎"}.iconochive-reedit:before{content:"✐"}.iconochive-gear:before{content:"⚙"}.iconochive-remove-circle:before{content:"❎"}.iconochive-plus-circle:before{content:"🗖"}.iconochive-minus-circle:before{content:"🗕"}.iconochive-x:before{content:"🗙"}.iconochive-fork:before{content:"⋔"}.iconochive-trash:before{content:"🗑"}.iconochive-warning:before{content:"⚠"}.iconochive-flash:before{content:"🗲"}.iconochive-world:before{content:"🗺"}.iconochive-lock:before{content:"🔒"}.iconochive-unlock:before{content:"🔓"}.iconochive-twitter:before{content:"🐦"}.iconochive-facebook:before{content:"f"}.iconochive-googleplus:before{content:"g"}.iconochive-reddit:before{content:"👽"}.iconochive-tumblr:before{content:"T"}.iconochive-pinterest:before{content:"𝓟"}.iconochive-popcorn:before{content:"💥"}.iconochive-email:before{content:"📧"}.iconochive-embed:before{content:"🔗"}.iconochive-gamepad:before{content:"🕹"}.iconochive-Zoom_In:before{content:"+"}.iconochive-Zoom_Out:before{content:"-"}.iconochive-RSS:before{content:"📨"}.iconochive-Light_Bulb:before{content:"💡"}.iconochive-Add:before{content:"⊕"}.iconochive-Tab_Activity:before{content:"⌘"}.iconochive-Forward:before{content:"⏩"}.iconochive-Backward:before{content:"⏪"}.iconochive-No_Audio:before{content:"🔈"}.iconochive-Pause:before{content:"⏸"}.iconochive-No_Favorite:before{content:"☆"}.iconochive-Unike:before{content:"♡"}.iconochive-Song:before{content:"♫"}.iconochive-No_Flag:before{content:"⚐"}.iconochive-Flag:before{content:"⚑"}.iconochive-Done:before{content:"✓"}.iconochive-Check:before{content:"✔"}.iconochive-Refresh:before{content:"⟳"}.iconochive-Headphones:before{content:"🎧"}.iconochive-Chart:before{content:"📈"}.iconochive-Bookmark:before{content:"📑"}.iconochive-Documents:before{content:"📚"}.iconochive-Newspaper:before{content:"📰"}.iconochive-Podcast:before{content:"📶"}.iconochive-Radio:before{content:"📻"}.iconochive-Cassette:before{content:"📼"}.iconochive-Shuffle:before{content:"🔀"}.iconochive-Loop:before{content:"🔁"}.iconochive-Low_Audio:before{content:"🔉"}.iconochive-First:before{content:"🎖"}.iconochive-Invisible:before{content:"🕶"}.iconochive-Computer:before{content:"🖳"}</style><div class="wb-autocomplete-suggestions sf-hidden" style=left:0px;top:1511px;width:0px></div></template>
+</div><div id=wm-ipp-print class=sf-hidden>The Wayback Machine - https://web.archive.org/web/20200719080546/http://effbot.org:80/zone/pythondoc-aggdraw.htm</div>
+ <div id=doc2 class=yui-t2><div id=hd></div><div id=bd><div id=yui-main><div class=yui-b><div class=content><div class=yui-g><h1 class=maintitle>The aggdraw&nbsp;Module</h1></div><div class=yui-ge><div class="yui-u first"><p>An AGG-based drawing interface.
+<p>
+The aggdraw module implements the basic
+<a href=https://web.archive.org/web/20200719080546/http://effbot.org/zone/wck.htm>WCK 2D Drawing Interface</a>
+on top of
+<a href=https://web.archive.org/web/20200719080546/http://www.antigrain.com/>the AGG library</a>.
+This library supports anti-aliasing and alpha compositing, but is
+otherwise fully compatible with the WCK renderer.
+<p>Examples:<pre class=python><span class=pycomment># draw cross on top of PIL image</span>
+d = aggdraw.Draw(im)
+p = aggdraw.Pen(<span class=pystring>"black"</span>, 0.5)
+d.line((0, 0, 500, 500), p)
+d.line((0, 500, 500, 0), p)
+d.flush()</pre><pre class=python><span class=pycomment># draw cross on internal image memory</span>
+d = aggdraw.Draw(<span class=pystring>"RGB"</span>, (320, 200), <span class=pystring>"white"</span>)
+p = aggdraw.Pen(<span class=pystring>"black"</span>, 0.5)
+d.line((0, 0, 500, 500), p)
+d.line((0, 500, 500, 0), p)
+s = d.tostring()</pre><h2>Module Contents</h2><dl><dt><a id=aggdraw.Brush-function name=aggdraw.Brush-function><b>Brush(color, opacity=255)</b></a> [<a href=#aggdraw.Brush-function>#</a>]<dd>
+<p>Creates a brush object.<dl><dt><i>color</i><dd>
+Brush color. This can be a color tuple, a CSS-style color
+ name, or a color integer (0xaarrggbb).</dd>
+<dt><i>opacity=</i><dd>
+Optional brush opacity. The default is to create a
+ solid brush.</dd>
+<dt>Returns:<dd>
+A brush object.</dd>
+</dl><br>
+</dd>
+<dt><b>Dib</b> (class) [<a href=#aggdraw.Dib-class>#</a>]<dd>
+<p>(Windows only; new in 1.2) Creates a drawing interface object that
+can be copied to a window.<dl><dt><i>mode</i><dd>
+A mode string. In the current release, this string
+ must be “RGB”.</dd>
+<dt><i>size</i><dd>
+The image size, as a 2-tuple.</dd>
+<dt><i>color</i><dd>
+An optional background color specifier. If a mode
+ string was given, this is used to initialize the image memory.
+ If omitted, it defaults to white with full alpha.</dd>
+</dl><br>
+<p>For more information about this class, see <a href=#aggdraw.Dib-class><i>The Dib Class</i></a>.</p></dd>
+<dt><b>Draw(image_or_mode, size, color=None)</b> (class) [<a href=#aggdraw.Draw-class>#</a>]<dd>
+<p>Creates a drawing interface object.<dl><dt><i>image_or_mode</i><dd>
+A PIL Image, or a mode string. The following
+ modes are supported: “L”, “RGB”, “RGBA”, “BGR”, “BGRA”.</dd>
+<dt><i>size</i><dd>
+If a mode string was given, this argument gives the
+ image size, as a 2-tuple.</dd>
+<dt><i>color</i><dd>
+An optional background color specifier. If a mode
+ string was given, this is used to initialize the image memory.
+ If omitted, it defaults to white with full alpha.</dd>
+</dl><br>
+<p>For more information about this class, see <a href=#aggdraw.Draw-class><i>The Draw Class</i></a>.</p></dd>
+<dt><a id=aggdraw.Font-function name=aggdraw.Font-function><b>Font(color, file, size=12, opacity=255)</b></a> [<a href=#aggdraw.Font-function>#</a>]<dd>
+<p>Font factory. This creates a font object for use with <a class=link href=#aggdraw.Draw.text-method><b>text</b></a>
+and <a class=link href=#aggdraw.Draw.textsize-method><b>textsize</b></a>, from a truetype font file.
+<dl><dt><i>color</i><dd>
+Font color. This can be a color tuple, a CSS-style color
+ name, or a color integer (0xaarrggbb).</dd>
+<dt><i>file</i><dd>
+Font source file.</dd>
+<dt><i>size=</i><dd>
+Optional font size, in pixels.</dd>
+<dt><i>opacity=</i><dd>
+Optional font opacity.</dd>
+<dt>Returns:<dd>
+A font object.</dd>
+</dl><br>
+</dd>
+<dt><b>Path()</b> (class) [<a href=#aggdraw.Path-class>#</a>]<dd>
+<p>(experimental) Path factory.<dl><dt>Returns:<dd>
+A path object.</dd>
+</dl><br>
+<p>For more information about this class, see <a href=#aggdraw.Path-class><i>The Path Class</i></a>.</p></dd>
+<dt><a id=aggdraw.Pen-function name=aggdraw.Pen-function><b>Pen(color, width=1, opacity=255)</b></a> [<a href=#aggdraw.Pen-function>#</a>]<dd>
+<p>Creates a pen object.<dl><dt><i>color</i><dd>
+Pen color. This can be a color tuple, a CSS-style color
+ name, or a color integer (0xaarrggbb).</dd>
+<dt><i>width=</i><dd>
+Optional pen width.</dd>
+<dt><i>opacity=</i><dd>
+Optional pen opacity. The default is to create a
+ solid pen.</dd>
+<dt>Returns:<dd>
+A pen object.</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Symbol-function name=aggdraw.Symbol-function><b>Symbol(path)</b></a> [<a href=#aggdraw.Symbol-function>#</a>]<dd>
+<p>(experimental) Symbol factory. This creates a symbol object for use
+with <a class=link href=#aggdraw.Draw.symbol-method><b>symbol</b></a>.
+<dl><dt><i>path</i><dd>
+An SVG-style path descriptor. The following operators
+ are supported: M (move), L (line), H (horizontal line), V
+ (vertical line), C (cubic bezier), S (smooth cubic bezier), Q
+ (quadratic bezier), T (smooth quadratic bezier), and Z (close
+ path). Use lower-case operators for relative coordinates,
+ upper-case for absolute coordinates.</dd>
+<dt>Returns:<dd>
+A symbol object.</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.VERSION-variable name=aggdraw.VERSION-variable><b>VERSION</b></a> (variable) [<a href=#aggdraw.VERSION-variable>#</a>]<dd>
+<p>Version number, given as a string. If this variable doesn’t exist,
+the version is “1.1b1” or earlier.</p></dd>
+</dl><h2><a id=aggdraw.Dib-class name=aggdraw.Dib-class>The Dib Class</a></h2><dl><dt><b>Dib</b> (class) [<a href=#aggdraw.Dib-class>#</a>]<dd>
+<p>(Windows only; new in 1.2) Creates a drawing interface object that
+can be copied to a window. This object has the same methods as
+<a class=link href=#aggdraw.Draw-class><b>Draw</b></a>, plus an <a class=link href=#aggdraw.Dib.expose-method><b>expose</b></a> method that copies the
+contents to a given window.
+<p>Example:<pre>d = aggdraw.Dib("RGB", (800, 600), "white")
+...
+d.expose(hwnd=window)
+</pre><dl><dt><i>mode</i><dd>
+A mode string. In the current release, this string
+ must be “RGB”.</dd>
+<dt><i>size</i><dd>
+The image size, as a 2-tuple.</dd>
+<dt><i>color</i><dd>
+An optional background color specifier. If a mode
+ string was given, this is used to initialize the image memory.
+ If omitted, it defaults to white with full alpha.</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Dib.expose-method name=aggdraw.Dib.expose-method><b>expose(hwnd=0, hdc=0)</b></a> [<a href=#aggdraw.Dib.expose-method>#</a>]<dd>
+<p>Copies the contents of the drawing object to the given window
+or device context. You must provide either a <b>hwnd</b> or a
+<b>hdc</b> keyword argument.
+<dl><dt><i>hwnd=</i><dd>
+A HWND handle, cast to an integer.</dd>
+<dt><i>hdc=</i><dd>
+A HDC handle, cast to an integer.</dd>
+</dl><br>
+</dd>
+</dl><h2><a id=aggdraw.Draw-class name=aggdraw.Draw-class>The Draw Class</a></h2><dl><dt><b>Draw(image_or_mode, size, color=None)</b> (class) [<a href=#aggdraw.Draw-class>#</a>]<dd>
+<p>Creates a drawing interface object. The constructor can
+either take a PIL Image object, or mode and size specifiers.
+<p>Examples:<pre>d = aggdraw.Draw(im)
+
+d = aggdraw.Draw("RGB", (800, 600), "white")
+</pre><dl><dt><i>image_or_mode</i><dd>
+A PIL Image, or a mode string. The following
+ modes are supported: “L”, “RGB”, “RGBA”, “BGR”, “BGRA”.</dd>
+<dt><i>size</i><dd>
+If a mode string was given, this argument gives the
+ image size, as a 2-tuple.</dd>
+<dt><i>color</i><dd>
+An optional background color specifier. If a mode
+ string was given, this is used to initialize the image memory.
+ If omitted, it defaults to white with full alpha.</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Draw.arc-method name=aggdraw.Draw.arc-method><b>arc(xy, start, end, pen=None)</b></a> [<a href=#aggdraw.Draw.arc-method>#</a>]<dd>
+<p>Draws an arc.<dl><dt><i>xy</i><dd>
+A 4-element Python sequence (x, y, x, y), with the
+ upper left corner given first.</dd>
+<dt><i>start</i><dd>
+Start angle.</dd>
+<dt><i>end</i><dd>
+End angle.</dd>
+<dt><i>pen</i><dd>
+Optional pen object created by the <a class=link href=#aggdraw.Pen-function><b>Pen</b></a> factory.
+</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Draw.chord-method name=aggdraw.Draw.chord-method><b>chord(xy, start, end, pen=None, brush=None)</b></a> [<a href=#aggdraw.Draw.chord-method>#</a>]<dd>
+<p>Draws a chord.
+<p>
+If a brush is given, it is used to fill the chord. If a pen
+is given, it is used to draw an outline around the chord.
+Either one (or both) can be left out.
+<dl><dt><i>xy</i><dd>
+A 4-element Python sequence (x, y, x, y), with the
+ upper left corner given first.</dd>
+<dt><i>start</i><dd>
+Start angle.</dd>
+<dt><i>end</i><dd>
+End angle.</dd>
+<dt><i>pen</i><dd>
+Optional pen object created by the <a class=link href=#aggdraw.Pen-function><b>Pen</b></a> factory.
+</dd>
+<dt><i>brush</i><dd>
+Optional brush object created by the <a class=link href=#aggdraw.Brush-function><b>Brush</b></a> factory.
+</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Draw.ellipse-method name=aggdraw.Draw.ellipse-method><b>ellipse(xy, pen, brush)</b></a> [<a href=#aggdraw.Draw.ellipse-method>#</a>]<dd>
+<p>Draws an ellipse.
+<p>
+If a brush is given, it is used to fill the ellipse. If a pen
+is given, it is used to draw an outline around the ellipse.
+Either one (or both) can be left out.
+<dl><dt><i>xy</i><dd>
+A bounding rectangle, given as a 4-element Python
+ sequence (x, y, x, y), with the upper left corner given
+ first. To draw a circle, make sure the coordinates form
+ a square.</dd>
+<dt><i>pen</i><dd>
+Optional pen object created by the <a class=link href=#aggdraw.Pen-function><b>Pen</b></a> factory.
+</dd>
+<dt><i>brush</i><dd>
+Optional brush created by the <a class=link href=#aggdraw.Brush-function><b>Brush</b></a> factory.
+</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Draw.flush-method name=aggdraw.Draw.flush-method><b>flush()</b></a> [<a href=#aggdraw.Draw.flush-method>#</a>]<dd>
+<p>Updates the associated image. If the drawing area is attached
+to a PIL Image object, this method must be called to make sure
+that the image updated.</p></dd>
+<dt><a id=aggdraw.Draw.fromstring-method name=aggdraw.Draw.fromstring-method><b>fromstring(data)</b></a> [<a href=#aggdraw.Draw.fromstring-method>#</a>]<dd>
+<p>Copies data from a string buffer to the drawing area.<dl><dt><i>data</i><dd>
+A string containing packed image data, compatible
+ with PIL’s <b>tostring</b> method.
+</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Draw.line-method name=aggdraw.Draw.line-method><b>line(xy, pen)</b></a> [<a href=#aggdraw.Draw.line-method>#</a>]<dd>
+<p>Draws a line.
+<p>Examples:<pre># <i>a cross</i>
+pen = aggdraw.Pen("red")
+draw.line((x0, y0, x1, y1), pen)
+draw.line((x0, y1, x1, y0), pen)
+
+# <i>a character</i>
+draw.line((0, 0, 20, 100, 30, 50, 40, 100, 60, 0), pen)
+</pre><dl><dt><i>xy</i><dd>
+A Python sequence (x, y, x, y, …). If more than two
+ coordinate pairs are given, they are connected in order, to
+ form a polyline.</dd>
+<dt><i>pen</i><dd>
+A pen object created by the <a class=link href=#aggdraw.Pen-function><b>Pen</b></a> factory
+ method.
+</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Draw.path-method name=aggdraw.Draw.path-method><b>path(xy, path, pen=None, brush=None)</b></a> [<a href=#aggdraw.Draw.path-method>#</a>]<dd>
+<p>(experimental) Draws a path at the given positions.
+If a brush is given, it is used to fill the path. If a pen
+is given, it is used to draw an outline around the path.
+Either one (or both) can be left out.<dl><dt><i>xy</i><dd>
+A Python sequence (x, y, x, y, …).</dd>
+<dt><i>path</i><dd>
+A symbol object created by the <a class=link href=#aggdraw.Path-class><b>Path</b></a> factory.
+</dd>
+<dt><i>pen</i><dd>
+Optional pen object created by the <a class=link href=#aggdraw.Pen-function><b>Pen</b></a> factory.
+</dd>
+<dt><i>brush</i><dd>
+Optional brush object created by the <a class=link href=#aggdraw.Brush-function><b>Brush</b></a> factory.
+</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Draw.pieslice-method name=aggdraw.Draw.pieslice-method><b>pieslice(xy, start, end, pen=None, brush=None)</b></a> [<a href=#aggdraw.Draw.pieslice-method>#</a>]<dd>
+<p>Draws a pieslice.
+<p>
+If a brush is given, it is used to fill the pieslice. If a pen
+is given, it is used to draw an outline around the pieslice.
+Either one (or both) can be left out.
+<dl><dt><i>xy</i><dd>
+A 4-element Python sequence (x, y, x, y), with the
+ upper left corner given first.</dd>
+<dt><i>start</i><dd>
+Start angle.</dd>
+<dt><i>end</i><dd>
+End angle.</dd>
+<dt><i>pen</i><dd>
+Optional pen object created by the <a class=link href=#aggdraw.Pen-function><b>Pen</b></a> factory.
+</dd>
+<dt><i>brush</i><dd>
+Optional brush object created by the <a class=link href=#aggdraw.Brush-function><b>Brush</b></a> factory.
+</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Draw.polygon-method name=aggdraw.Draw.polygon-method><b>polygon(xy, pen, brush)</b></a> [<a href=#aggdraw.Draw.polygon-method>#</a>]<dd>
+<p>Draws a polygon.
+<p>
+If a brush is given, it is used to fill the polygon. If a pen is
+given, it is used to draw an outline around the polygon. Either
+one (or both) can be left out.
+<dl><dt><i>xy</i><dd>
+A Python sequence (x, y, x, y, …).</dd>
+<dt><i>pen</i><dd>
+Optional pen object created by the <a class=link href=#aggdraw.Pen-function><b>Pen</b></a> factory.
+</dd>
+<dt><i>brush</i><dd>
+Optional brush object created by the <a class=link href=#aggdraw.Brush-function><b>Brush</b></a> factory.
+</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Draw.rectangle-method name=aggdraw.Draw.rectangle-method><b>rectangle(xy, pen, brush)</b></a> [<a href=#aggdraw.Draw.rectangle-method>#</a>]<dd>
+<p>Draws a rectangle.
+<p>
+If a brush is given, it is used to fill the rectangle. If a pen
+is given, it is used to draw an outline around the rectangle.
+Either one (or both) can be left out.
+<dl><dt><i>xy</i><dd>
+A 4-element Python sequence (x, y, x, y), with the
+ upper left corner given first.</dd>
+<dt><i>pen</i><dd>
+Optional pen object created by the <a class=link href=#aggdraw.Pen-function><b>Pen</b></a> factory.
+</dd>
+<dt><i>brush</i><dd>
+Optional brush created by the <a class=link href=#aggdraw.Brush-function><b>Brush</b></a> factory.
+</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Draw.setantialias-method name=aggdraw.Draw.setantialias-method><b>setantialias(flag)</b></a> [<a href=#aggdraw.Draw.setantialias-method>#</a>]<dd>
+<p>(Experimental) Controls anti-aliasing.<dl><dt><i>flag</i><dd>
+True to enable anti-aliasing, false to disable it.</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Draw.settransform-method name=aggdraw.Draw.settransform-method><b>settransform(transform=None)</b></a> [<a href=#aggdraw.Draw.settransform-method>#</a>]<dd>
+<p>(Experimental) Replaces the current drawing transform.
+<p>Example:<pre>draw.settransform((dx, dy))
+</pre><dl><dt><i>transform</i><dd>
+The new transform. In the current version,
+ this must be either a (dx, dy) translation tuple, or a
+ PIL-style (a, b, c, d, e, f) affine transform tuple. If
+ the transform is omitted, it is reset.</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Draw.symbol-method name=aggdraw.Draw.symbol-method><b>symbol(xy, symbol, pen=None, brush=None)</b></a> [<a href=#aggdraw.Draw.symbol-method>#</a>]<dd>
+<p>(experimental) Draws a symbol at the given positions.
+If a brush is given, it is used to fill the symbol. If a pen
+is given, it is used to draw an outline around the symbol.
+Either one (or both) can be left out.<dl><dt><i>xy</i><dd>
+A Python sequence (x, y, x, y, …).</dd>
+<dt><i>symbol</i><dd>
+A symbol object created by the <a class=link href=#aggdraw.Symbol-function><b>Symbol</b></a> factory.
+</dd>
+<dt><i>pen</i><dd>
+Optional pen object created by the <a class=link href=#aggdraw.Pen-function><b>Pen</b></a> factory.
+</dd>
+<dt><i>brush</i><dd>
+Optional brush object created by the <a class=link href=#aggdraw.Brush-function><b>Brush</b></a> factory.
+</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Draw.text-method name=aggdraw.Draw.text-method><b>text(xy, text, font)</b></a> [<a href=#aggdraw.Draw.text-method>#</a>]<dd>
+<p>Draws a text string at the given position, using the given
+font.
+<p>Example:<pre>font = aggdraw.Font(black, times)
+draw.text((100, 100), "hello, world", font)
+</pre><dl><dt><i>xy</i><dd>
+A 2-element Python sequence (x, y).</dd>
+<dt><i>text</i><dd>
+An 8-bit string containing ASCII text, or a Unicode
+ string.</dd>
+<dt><i>font</i><dd>
+A font object created by the <a class=link href=#aggdraw.Font-function><b>Font</b></a> factory.
+</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Draw.textsize-method name=aggdraw.Draw.textsize-method><b>textsize(text, font)</b></a> [<a href=#aggdraw.Draw.textsize-method>#</a>]<dd>
+<p>Determines the size of a text string.<dl><dt><i>text</i><dd>
+An 8-bit string containing ASCII text, or a Unicode string.</dd>
+<dt><i>font</i><dd>
+A font object created by the <a class=link href=#aggdraw.Font-function><b>Font</b></a> factory.
+</dd>
+<dt>Returns:<dd>
+A (width, height) tuple.</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Draw.tostring-method name=aggdraw.Draw.tostring-method><b>tostring(data)</b></a> [<a href=#aggdraw.Draw.tostring-method>#</a>]<dd>
+<p>Copies data from the drawing area to a string.<dl><dt>Returns:<dd>
+A string containing packed image data, compatible with
+ PIL’s <b>fromstring</b> method.
+</dd>
+</dl><br>
+</dd>
+</dl><h2><a id=aggdraw.Path-class name=aggdraw.Path-class>The Path Class</a></h2><dl><dt><b>Path()</b> (class) [<a href=#aggdraw.Path-class>#</a>]<dd>
+<p>(experimental) Path factory. This creates a path object for use
+with <a class=link href=#aggdraw.Draw.path-method><b>path</b></a>.
+<dl><dt>Returns:<dd>
+A path object.</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Path.close-method name=aggdraw.Path.close-method><b>close()</b></a> [<a href=#aggdraw.Path.close-method>#</a>]<dd>
+<p>Closes the current path.</p></dd>
+<dt><a id=aggdraw.Path.coords-method name=aggdraw.Path.coords-method><b>coords()</b></a> [<a href=#aggdraw.Path.coords-method>#</a>]<dd>
+<p>Returns the coordinates for this path. Curves are flattened
+before being returned.<dl><dt>Returns:<dd>
+A Python sequence (x, y, x, y, …).</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Path.curveto-method name=aggdraw.Path.curveto-method><b>curveto(x1, y1, x2, y2, x, y)</b></a> [<a href=#aggdraw.Path.curveto-method>#</a>]<dd>
+<p>Adds a bezier curve segment to the path.<dl><dt><i>x1</i><dd>
+</dd>
+<dt><i>y1</i><dd>
+</dd>
+<dt><i>x2</i><dd>
+</dd>
+<dt><i>y2</i><dd>
+</dd>
+<dt><i>x</i><dd>
+</dd>
+<dt><i>y</i><dd>
+</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Path.lineto-method name=aggdraw.Path.lineto-method><b>lineto(x, y)</b></a> [<a href=#aggdraw.Path.lineto-method>#</a>]<dd>
+<p>Adds a line segment to the path.<dl><dt><i>x</i><dd>
+</dd>
+<dt><i>y</i><dd>
+</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Path.moveto-method name=aggdraw.Path.moveto-method><b>moveto(x, y)</b></a> [<a href=#aggdraw.Path.moveto-method>#</a>]<dd>
+<p>Moves the path pointer to the given location.<dl><dt><i>x</i><dd>
+</dd>
+<dt><i>y</i><dd>
+</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Path.rcurveto-method name=aggdraw.Path.rcurveto-method><b>rcurveto(x1, y1, x2, y2, x, y)</b></a> [<a href=#aggdraw.Path.rcurveto-method>#</a>]<dd>
+<p>Adds a bezier curve segment to the path, using relative coordinates.
+Same as <a class=link href=#aggdraw.Path.curveto-method><b>curveto</b></a>, but the coordinates are relative to
+the current position.
+<dl><dt><i>x1</i><dd>
+</dd>
+<dt><i>y1</i><dd>
+</dd>
+<dt><i>x2</i><dd>
+</dd>
+<dt><i>y2</i><dd>
+</dd>
+<dt><i>x</i><dd>
+</dd>
+<dt><i>y</i><dd>
+</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Path.rlineto-method name=aggdraw.Path.rlineto-method><b>rlineto(x, y)</b></a> [<a href=#aggdraw.Path.rlineto-method>#</a>]<dd>
+<p>Adds a line segment to the path, using relative coordinates.
+Same as <a class=link href=#aggdraw.Path.lineto-method><b>lineto</b></a>, but the coordinates are relative to
+the current position.
+<dl><dt><i>x</i><dd>
+</dd>
+<dt><i>y</i><dd>
+</dd>
+</dl><br>
+</dd>
+<dt><a id=aggdraw.Path.rmoveto-method name=aggdraw.Path.rmoveto-method><b>rmoveto(x, y)</b></a> [<a href=#aggdraw.Path.rmoveto-method>#</a>]<dd>
+<p>Moves the path pointer to the given location, relative to
+the current position.<dl><dt><i>x</i><dd>
+</dd>
+<dt><i>y</i><dd>
+</dd>
+</dl><br>
+</dd>
+</dl></div><div class=yui-u>&nbsp;</div></div><div class=yui-g></div></div></div></div><div class=yui-b><div id=menu><ul><li><b><a href=https://web.archive.org/web/20200719080546/https://effbot.org/ title="Go to effbot.org.">::: effbot.org</a></b><li><b><a href=https://web.archive.org/web/20200719080546/https://effbot.org/zone/ title="Go to zone index page.">::: zone :::</a></b></ul></div></div></div><div id=ft><p><a href=https://web.archive.org/web/20200719080546/http://www.djangoproject.com/><img src="data:image/gif;base64,R0lGODlhUAAPAOYZAD1uTTdnRzxtTD5vTkBwUDtrS1eBZVmEZ/P29J21pViCZliDZm6Tes7a0s7b0ubs6Oft6XGVfWqPds/b01mDZzVmRW6SejRkRDZmRgEN/6C4qDVlRdrj3VF8X22SeZ62pp63pmuPd8PSyJevn3CUfGyQeFqEaEp4WZ+3p/L284Wjj3KWfpSvnc3Z0URyU8LRx3OYf2WMcoSijtvk3tDc1GKKb6i+sLPGuWmOdbfKvazBs8LSx1V8YqK6qnCRe5u0o4KhjEh2V5OunGSLcYimkommk1yEaYelkUx5W0RxU5Ktm7bJvF+GbKG5qVR+YnmbhGKJb2iNdI+rmGaNc1R/Yn2eiJy0pKe9rkFxUTpqSv/HVzhpSDdoRzZnRkR1VENzU0JyUi5ePnaagv///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAABkALAAAAABQAA8AAAf/gBlig4SFhoeIiYqLjI2CXpCRkpMwY2MwNGM9k5ydnp+goWFiX6Wmp6grliuZTaivsLGys7SjYLe4uboRlhFTESa6wsPExcbHo1jKygHLyxETlr06E0UxIghjCCwUOTOWEBrKESIQ4BpV32MiMc5YAfDN8e/x8vPLowT6BAFa+/okpEkjEU2DBoFjAiIcQgThGBYIESDZ10+LxYpaTFjciDHjvlEDQmLQckBLyJA7tNVgYIlBNBQMGNQQ0rLlCUsosk048XKJthMsxxwRSfKA0QEjDxA1mvToyVEAAFTQQiEq1agOxjgAYMGShawgoJiT1nWMBQCWspoFADbrVrRj/0BElbox6tSqdKtOtYg36igBAjZstLgAcIMxEIJ4sOTh8IfDDZ4wZizA0gtLHwQ4vgxBABVLSgADXkBaS2AthU8XFkxaNOBRBQpc0KKgNu3YKiw94GCpxOEEhzkk6N27gKUEDyzxHpMg9xgOycc4iT17o4Lqt2crkD14e+xRWcKLHx8+QTZpIbIlkIEwhKUQWY4ziX48iw1pCGSMN8DfQPj+4vn3H4DijbLFgQgmmGAHEriwhQSWSHGgBBJ0oOCFHXSQnBUHukDhhSCGKOIoXJRo4okolghECmOkkESKMHLxwBU/tGAJDjHmqGOMo3Th449ABuljFC08YISQSPqI0B8NSTbpZJNhZBDGlFRWaeWVWGbpwwhc8pDll2CCmUEgADs=" border=0 alt="A Django site." title="A Django site." style=vertical-align:bottom width=80 height=15></a>
+rendered by a <a href=https://web.archive.org/web/20200719080546/http://www.djangoproject.com/>django</a> application. hosted by <a href="https://web.archive.org/web/20200719080546/http://www.webfaction.com/shared_hosting?affiliate=slab">webfaction</a>.</p></div></div>
+<script data-template-shadow-root>(()=>{document.currentScript.remove();processNode(document);function processNode(node){node.querySelectorAll("template[shadowroot]").forEach(element=>{let shadowRoot = element.parentElement.shadowRoot;if (!shadowRoot) {try {shadowRoot=element.parentElement.attachShadow({mode:element.getAttribute("shadowroot")});shadowRoot.innerHTML=element.innerHTML;element.remove()} catch (error) {} if (shadowRoot) {processNode(shadowRoot)}}})}})()</script>

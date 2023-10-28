@@ -1,0 +1,1283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>pd.path API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>pd.path</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from copy import deepcopy
+from typing import Self
+from pd import singleton, tween
+from pd._d_parser import parse_path
+from pd.tween import Easings
+from pd.utils import (get_pos, linspace, calculate_length,
+                      is_points_close, rotate, scale, translate, tuples2list,
+                      list2tuples, centroid, bbox, shift,
+                      point_on_circle, opposite_angle)
+import math
+
+
+class Path():
+
+    def __init__(self, coordinates: list[float] | list[tuple] | str, close=False):
+        &#34;&#34;&#34;Creates new Path with a list of coordinates or SVG d string
+
+        (A) Arc for SVG string is not supported.
+        &#34;&#34;&#34;
+        self.coords = []
+        if isinstance(coordinates, str):
+            self.coords = parse_path(coordinates)
+        if isinstance(coordinates, list):
+            self.coords = coordinates
+        if isinstance(coordinates[0], tuple):
+            self.coords = tuples2list(coordinates)
+        self.length = calculate_length(self.coords)
+        self.anchor = self.centroid
+
+    def set_anchor(self, pos: tuple):
+        self.anchor = pos
+        return self
+
+    def is_closed(self) -&gt; bool:
+        &#34;&#34;&#34;Checks if the Path is closed.&#34;&#34;&#34;
+        x1, y1 = self.coords[:2]
+        x2, y2 = self.coords[-2:]
+        return math.isclose(x1, x2) and math.isclose(y1, y2)
+
+    def close(self):
+        &#34;&#34;&#34;Closes the path&#34;&#34;&#34;
+        if self.is_closed() == False:
+            self.coords.extend((self.coords[0], self.coords[1]))
+            self.length = calculate_length(self.coords)
+        return self
+
+    def open(self):
+        &#34;&#34;&#34;Opens the path&#34;&#34;&#34;
+        if self.is_closed():
+            self.coords = self.coords[:-2]
+            self.length = calculate_length(self.coords)
+        return self
+
+    def clone(self):
+        &#34;&#34;&#34;Returns copy of Path&#34;&#34;&#34;
+        cp = deepcopy(self)
+        return cp
+
+    @property
+    def segs(self):
+        &#34;&#34;&#34;Returns number of segments&#34;&#34;&#34;
+        return (len(self.coords) / 2) - 1
+
+    @property
+    def start(self) -&gt; tuple:
+        &#34;&#34;&#34;Returns start point&#34;&#34;&#34;
+        return (self.coords[0], self.coords[1])
+
+    @property
+    def end(self) -&gt; tuple:
+        &#34;&#34;&#34;Returns end point&#34;&#34;&#34;
+        return (self.coords[-2], self.coords[-1])
+
+    @property
+    def points(self):
+        &#34;&#34;&#34;Returns number of points&#34;&#34;&#34;
+        return (len(self.coords) / 2)
+
+    def repeated(self, n):
+        &#34;&#34;&#34;Returns new repeated version of path n times
+
+        Useful for creating motion path loops.
+        &#34;&#34;&#34;
+        clone = deepcopy(self)
+        clone.open()
+        clone.coords = clone.coords * n
+        clone.close()
+        return clone
+
+    def set_start(self, index):
+        &#34;&#34;&#34;Sets start point of path. (shift coordinates)&#34;&#34;&#34;
+        self.open()
+        self.coords = shift(self.coords, index * 2)
+        self.close()
+        self.length = calculate_length(self.coords)
+
+    def as_tuples(self, round_coords=False) -&gt; list[tuple]:
+        &#34;&#34;&#34;Returns path coords as tuple list&#34;&#34;&#34;
+        return list2tuples(self.coords, round_coords=round_coords)
+
+    @property
+    def centroid(self) -&gt; tuple:
+        &#34;&#34;&#34;Calculates and returns path centroid&#34;&#34;&#34;
+        if self.is_closed() == False:
+            return centroid(self.coords)
+        else:
+            self.open()
+            point = centroid(self.coords)
+            self.close()
+            return point
+
+    @property
+    def bounds(self) -&gt; list[tuple]:
+        &#34;&#34;&#34;Returns top-left and bottom-right bounding box coordinates as list. [p1, p2]&#34;&#34;&#34;
+        return bbox(self.coords)
+
+    def translate(self, x, y):
+        &#34;&#34;&#34;Translates Path&#34;&#34;&#34;
+        translate(self.coords, x, y)
+        self.anchor = (self.anchor[0] + x, self.anchor[1] + y)
+        return self
+
+    def rotate(self, angle, anchor_point: tuple = None):
+        &#34;&#34;&#34;Rotates the Path around the anchor point.
+
+        The default anchor point is the centroid point of the shape. 
+        The anchor point of newly created Path objects
+        is calculated by averaging the coordinates.&#34;&#34;&#34;
+
+        if anchor_point == None:
+            anchor_point = self.anchor
+        rotate(self.coords, angle, anchor_point)
+        return self
+
+    def scale(self, x, y, anchor_point: tuple = None):
+        &#34;&#34;&#34;Scales the Path around the anchor point
+
+        The default anchor point is the centroid point of the shape.&#34;&#34;&#34;
+
+        if anchor_point == None:
+            anchor_point = self.anchor
+        scale(self.coords, x, y, anchor_point)
+        self.length = calculate_length(self.coords)
+        return self
+
+    def translated(self, x, y):
+        &#34;&#34;&#34;Returns new translated Path&#34;&#34;&#34;
+        cp = deepcopy(self)
+        cp.translate(x, y)
+        return cp
+
+    def rotated(self, angle, anchor_point: tuple = None):
+        &#34;&#34;&#34;Returns a new Path rotated around the anchor point.&#34;&#34;&#34;
+        cp = deepcopy(self)
+        if anchor_point == None:
+            anchor_point = cp.anchor
+        return cp.rotate(angle, anchor_point)
+
+    def scaled(self, x, y, anchor_point: tuple = None):
+        &#34;&#34;&#34;Returns new scaled Path&#34;&#34;&#34;
+        cp = deepcopy(self)
+        return cp.scale(x, y, anchor_point)
+
+    def set_pos(self, pos: tuple) -&gt; Self:
+        &#34;&#34;&#34;Moves the shape to the target position.
+
+        The anchor point of the Path is taken as basis.
+        &#34;&#34;&#34;
+        self.translate(pos[0] - self.anchor[0], pos[1] - self.anchor[1])
+        return self
+
+    def reverse(self):
+        &#34;&#34;&#34;reverse direction of path (order of coordinates).
+
+        The starting point becomes the end and the end becomes the beginning.
+        &#34;&#34;&#34;
+        self.coords.reverse()
+        for i in range(0, len(self.coords), 2):
+            self.coords[i], self.coords[i+1] = self.coords[i+1], self.coords[i]
+        return self
+
+    def add_point(self, t):
+        &#34;&#34;&#34;Adds a point at position t to the path.
+
+        If there is already a point in the position, the point is not added.
+        &#34;&#34;&#34;
+
+        if t == 1 or t == 0:
+            return
+
+        target_length = t * self.length
+        total_length = 0.0
+        for i in range(0, len(self.coords) - 2, 2):
+            x1, y1 = self.coords[i], self.coords[i + 1]
+            x2, y2 = self.coords[i + 2], self.coords[i + 3]
+            segment_length = math.hypot(x2 - x1, y2 - y1)
+            if total_length + segment_length &gt;= target_length:
+                frac_seg = (target_length - total_length) / segment_length
+                point_x = x1 + (x2 - x1) * frac_seg
+                point_y = y1 + (y2 - y1) * frac_seg
+                if is_points_close((x2, y2), (point_x, point_y)) == False:
+                    self.coords.insert(i + 2, point_y)
+                    self.coords.insert(i + 2, point_x)
+                    self.length = calculate_length(self.coords)
+                return
+            total_length += segment_length
+
+    def point_and_angle(self, t) -&gt; tuple[tuple, float]:
+        &#34;&#34;&#34;Returns point and tangent angle at time t (in range 0~1)&#34;&#34;&#34;
+
+        if t == 1:
+            angle = math.atan2(self.coords[-1] - self.coords[-3],
+                               self.coords[-2] - self.coords[-4])
+            return ([self.coords[-2], self.coords[-1]],  angle)
+        if t == 0:
+            angle = math.atan2(self.coords[3] - self.coords[1],
+                               self.coords[2] - self.coords[0])
+            return ([self.coords[0], self.coords[1]],  angle)
+
+        target_length = t * self.length
+        return get_pos(self.coords, target_length)
+
+    def offset(self, t: float, lenght: float) -&gt; tuple[tuple, tuple]:
+        &#34;&#34;&#34;Returns the outer and inner parallel points of the given length in time on the path.&#34;&#34;&#34;
+        pos, ang = self.point_and_angle(t)
+        ang += math.pi * 0.5
+        p1 = point_on_circle(pos, lenght, ang)
+        p2 = point_on_circle(pos, lenght, opposite_angle(ang))
+        return (p1, p2)
+
+    def resample(self, n):
+        &#34;&#34;&#34;Resamples the points on the path n times&#34;&#34;&#34;
+        cords = []
+        for i in linspace(0, 1, n):
+            cords.extend(self.point_and_angle(i)[0])
+        self.coords = cords
+        self.length = calculate_length(self.coords)
+        return self
+
+    def draw(self, fill=&#34;#181818&#34;, stroke=&#34;grey&#34;, thickness=1.5):
+        &#34;&#34;&#34;Draws the path on the canvas.&#34;&#34;&#34;
+        singleton.draw_path(self.coords, fill, stroke,
+                            thickness, self.is_closed())
+        return self
+
+    def draw_debug(self, radius=3, fill=80, stroke=&#34;white&#34;, thickness=1.5):
+        &#34;&#34;&#34;Draws path features as colored dots. It is for debugging purposes.
+
+        The starting point is blue. The second point is green and helps find the direction of the path.
+        &#34;&#34;&#34;
+        singleton.draw_path(self.coords, fill, stroke, thickness)
+        points = self.as_tuples()
+        for i, p in enumerate(points):
+            if i != 0 or 1:
+                singleton.draw_ellipse(
+                    p, radius, radius, &#34;grey&#34;, None)
+        singleton.draw_ellipse(points[0], radius, radius, &#34;deepskyblue&#34;, None)
+        singleton.draw_ellipse(points[1], radius, radius, &#34;lightgreen&#34;, None)
+        return self
+
+    def print_info(self, round_coords=True, lines=False):
+        &#34;Prints path info and coordinates&#34;
+        anchor_ = &#34;anchor: &#34; + str(self.anchor)
+        closed_, points_ = str(self.is_closed()), str(
+            int(len(self.coords) / 2))
+        if lines:
+            print(&#34;closed:&#34;, closed_, &#34;| &#34;, &#34;points:&#34;, points_, &#34;| &#34;, anchor_)
+            for p in self.as_tuples(round_coords=round_coords):
+                print(p)
+        else:
+            print(&#34;closed:&#34;, closed_, &#34;| &#34;, &#34;points:&#34;, points_, &#34;| &#34;, anchor_)
+            print(&#34;coords: &#34;, self.as_tuples(round_coords=round_coords))
+        return self
+
+
+class CBezier():
+
+    def __init__(self, sx, sy, c1x, c1y, c2x, c2y, ex, ey):
+        &#34;&#34;&#34;Cubic Bezier object&#34;&#34;&#34;
+        self.points: list[tuple] = [(sx, sy), (c1x, c1y), (c2x, c2y), (ex, ey)]
+
+    def point(self, t: float) -&gt; tuple:
+        &#34;&#34;&#34;Returns the point at time t in range 0~1&#34;&#34;&#34;
+        x = (1 - t) * (1 - t) * (1 - t) * self.points[0][0] + 3 * (1 - t) * (
+            1 - t) * t * self.points[1][0] + 3 * (1 - t) * t * t * self.points[2][0] + t * t * t * self.points[3][0]
+        y = (1 - t) * (1 - t) * (1 - t) * self.points[0][1] + 3 * (1 - t) * (
+            1 - t) * t * self.points[1][1] + 3 * (1 - t) * t * t * self.points[2][1] + t * t * t * self.points[3][1]
+        return (x, y)
+
+    def flatten(self, samples=50) -&gt; list[float]:
+        &#34;&#34;&#34;Returns the flattened coordinates.&#34;&#34;&#34;
+        coords = []
+        for t in linspace(0, 1, samples):
+            coords.extend(self.point(t))
+        return coords</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="pd.path.CBezier"><code class="flex name class">
+<span>class <span class="ident">CBezier</span></span>
+<span>(</span><span>sx, sy, c1x, c1y, c2x, c2y, ex, ey)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Cubic Bezier object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CBezier():
+
+    def __init__(self, sx, sy, c1x, c1y, c2x, c2y, ex, ey):
+        &#34;&#34;&#34;Cubic Bezier object&#34;&#34;&#34;
+        self.points: list[tuple] = [(sx, sy), (c1x, c1y), (c2x, c2y), (ex, ey)]
+
+    def point(self, t: float) -&gt; tuple:
+        &#34;&#34;&#34;Returns the point at time t in range 0~1&#34;&#34;&#34;
+        x = (1 - t) * (1 - t) * (1 - t) * self.points[0][0] + 3 * (1 - t) * (
+            1 - t) * t * self.points[1][0] + 3 * (1 - t) * t * t * self.points[2][0] + t * t * t * self.points[3][0]
+        y = (1 - t) * (1 - t) * (1 - t) * self.points[0][1] + 3 * (1 - t) * (
+            1 - t) * t * self.points[1][1] + 3 * (1 - t) * t * t * self.points[2][1] + t * t * t * self.points[3][1]
+        return (x, y)
+
+    def flatten(self, samples=50) -&gt; list[float]:
+        &#34;&#34;&#34;Returns the flattened coordinates.&#34;&#34;&#34;
+        coords = []
+        for t in linspace(0, 1, samples):
+            coords.extend(self.point(t))
+        return coords</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="pd.path.CBezier.flatten"><code class="name flex">
+<span>def <span class="ident">flatten</span></span>(<span>self, samples=50) ‑> list[float]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the flattened coordinates.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def flatten(self, samples=50) -&gt; list[float]:
+    &#34;&#34;&#34;Returns the flattened coordinates.&#34;&#34;&#34;
+    coords = []
+    for t in linspace(0, 1, samples):
+        coords.extend(self.point(t))
+    return coords</code></pre>
+</details>
+</dd>
+<dt id="pd.path.CBezier.point"><code class="name flex">
+<span>def <span class="ident">point</span></span>(<span>self, t: float) ‑> tuple</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the point at time t in range 0~1</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def point(self, t: float) -&gt; tuple:
+    &#34;&#34;&#34;Returns the point at time t in range 0~1&#34;&#34;&#34;
+    x = (1 - t) * (1 - t) * (1 - t) * self.points[0][0] + 3 * (1 - t) * (
+        1 - t) * t * self.points[1][0] + 3 * (1 - t) * t * t * self.points[2][0] + t * t * t * self.points[3][0]
+    y = (1 - t) * (1 - t) * (1 - t) * self.points[0][1] + 3 * (1 - t) * (
+        1 - t) * t * self.points[1][1] + 3 * (1 - t) * t * t * self.points[2][1] + t * t * t * self.points[3][1]
+    return (x, y)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="pd.path.Path"><code class="flex name class">
+<span>class <span class="ident">Path</span></span>
+<span>(</span><span>coordinates: list[float] | list[tuple] | str, close=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates new Path with a list of coordinates or SVG d string</p>
+<p>(A) Arc for SVG string is not supported.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Path():
+
+    def __init__(self, coordinates: list[float] | list[tuple] | str, close=False):
+        &#34;&#34;&#34;Creates new Path with a list of coordinates or SVG d string
+
+        (A) Arc for SVG string is not supported.
+        &#34;&#34;&#34;
+        self.coords = []
+        if isinstance(coordinates, str):
+            self.coords = parse_path(coordinates)
+        if isinstance(coordinates, list):
+            self.coords = coordinates
+        if isinstance(coordinates[0], tuple):
+            self.coords = tuples2list(coordinates)
+        self.length = calculate_length(self.coords)
+        self.anchor = self.centroid
+
+    def set_anchor(self, pos: tuple):
+        self.anchor = pos
+        return self
+
+    def is_closed(self) -&gt; bool:
+        &#34;&#34;&#34;Checks if the Path is closed.&#34;&#34;&#34;
+        x1, y1 = self.coords[:2]
+        x2, y2 = self.coords[-2:]
+        return math.isclose(x1, x2) and math.isclose(y1, y2)
+
+    def close(self):
+        &#34;&#34;&#34;Closes the path&#34;&#34;&#34;
+        if self.is_closed() == False:
+            self.coords.extend((self.coords[0], self.coords[1]))
+            self.length = calculate_length(self.coords)
+        return self
+
+    def open(self):
+        &#34;&#34;&#34;Opens the path&#34;&#34;&#34;
+        if self.is_closed():
+            self.coords = self.coords[:-2]
+            self.length = calculate_length(self.coords)
+        return self
+
+    def clone(self):
+        &#34;&#34;&#34;Returns copy of Path&#34;&#34;&#34;
+        cp = deepcopy(self)
+        return cp
+
+    @property
+    def segs(self):
+        &#34;&#34;&#34;Returns number of segments&#34;&#34;&#34;
+        return (len(self.coords) / 2) - 1
+
+    @property
+    def start(self) -&gt; tuple:
+        &#34;&#34;&#34;Returns start point&#34;&#34;&#34;
+        return (self.coords[0], self.coords[1])
+
+    @property
+    def end(self) -&gt; tuple:
+        &#34;&#34;&#34;Returns end point&#34;&#34;&#34;
+        return (self.coords[-2], self.coords[-1])
+
+    @property
+    def points(self):
+        &#34;&#34;&#34;Returns number of points&#34;&#34;&#34;
+        return (len(self.coords) / 2)
+
+    def repeated(self, n):
+        &#34;&#34;&#34;Returns new repeated version of path n times
+
+        Useful for creating motion path loops.
+        &#34;&#34;&#34;
+        clone = deepcopy(self)
+        clone.open()
+        clone.coords = clone.coords * n
+        clone.close()
+        return clone
+
+    def set_start(self, index):
+        &#34;&#34;&#34;Sets start point of path. (shift coordinates)&#34;&#34;&#34;
+        self.open()
+        self.coords = shift(self.coords, index * 2)
+        self.close()
+        self.length = calculate_length(self.coords)
+
+    def as_tuples(self, round_coords=False) -&gt; list[tuple]:
+        &#34;&#34;&#34;Returns path coords as tuple list&#34;&#34;&#34;
+        return list2tuples(self.coords, round_coords=round_coords)
+
+    @property
+    def centroid(self) -&gt; tuple:
+        &#34;&#34;&#34;Calculates and returns path centroid&#34;&#34;&#34;
+        if self.is_closed() == False:
+            return centroid(self.coords)
+        else:
+            self.open()
+            point = centroid(self.coords)
+            self.close()
+            return point
+
+    @property
+    def bounds(self) -&gt; list[tuple]:
+        &#34;&#34;&#34;Returns top-left and bottom-right bounding box coordinates as list. [p1, p2]&#34;&#34;&#34;
+        return bbox(self.coords)
+
+    def translate(self, x, y):
+        &#34;&#34;&#34;Translates Path&#34;&#34;&#34;
+        translate(self.coords, x, y)
+        self.anchor = (self.anchor[0] + x, self.anchor[1] + y)
+        return self
+
+    def rotate(self, angle, anchor_point: tuple = None):
+        &#34;&#34;&#34;Rotates the Path around the anchor point.
+
+        The default anchor point is the centroid point of the shape. 
+        The anchor point of newly created Path objects
+        is calculated by averaging the coordinates.&#34;&#34;&#34;
+
+        if anchor_point == None:
+            anchor_point = self.anchor
+        rotate(self.coords, angle, anchor_point)
+        return self
+
+    def scale(self, x, y, anchor_point: tuple = None):
+        &#34;&#34;&#34;Scales the Path around the anchor point
+
+        The default anchor point is the centroid point of the shape.&#34;&#34;&#34;
+
+        if anchor_point == None:
+            anchor_point = self.anchor
+        scale(self.coords, x, y, anchor_point)
+        self.length = calculate_length(self.coords)
+        return self
+
+    def translated(self, x, y):
+        &#34;&#34;&#34;Returns new translated Path&#34;&#34;&#34;
+        cp = deepcopy(self)
+        cp.translate(x, y)
+        return cp
+
+    def rotated(self, angle, anchor_point: tuple = None):
+        &#34;&#34;&#34;Returns a new Path rotated around the anchor point.&#34;&#34;&#34;
+        cp = deepcopy(self)
+        if anchor_point == None:
+            anchor_point = cp.anchor
+        return cp.rotate(angle, anchor_point)
+
+    def scaled(self, x, y, anchor_point: tuple = None):
+        &#34;&#34;&#34;Returns new scaled Path&#34;&#34;&#34;
+        cp = deepcopy(self)
+        return cp.scale(x, y, anchor_point)
+
+    def set_pos(self, pos: tuple) -&gt; Self:
+        &#34;&#34;&#34;Moves the shape to the target position.
+
+        The anchor point of the Path is taken as basis.
+        &#34;&#34;&#34;
+        self.translate(pos[0] - self.anchor[0], pos[1] - self.anchor[1])
+        return self
+
+    def reverse(self):
+        &#34;&#34;&#34;reverse direction of path (order of coordinates).
+
+        The starting point becomes the end and the end becomes the beginning.
+        &#34;&#34;&#34;
+        self.coords.reverse()
+        for i in range(0, len(self.coords), 2):
+            self.coords[i], self.coords[i+1] = self.coords[i+1], self.coords[i]
+        return self
+
+    def add_point(self, t):
+        &#34;&#34;&#34;Adds a point at position t to the path.
+
+        If there is already a point in the position, the point is not added.
+        &#34;&#34;&#34;
+
+        if t == 1 or t == 0:
+            return
+
+        target_length = t * self.length
+        total_length = 0.0
+        for i in range(0, len(self.coords) - 2, 2):
+            x1, y1 = self.coords[i], self.coords[i + 1]
+            x2, y2 = self.coords[i + 2], self.coords[i + 3]
+            segment_length = math.hypot(x2 - x1, y2 - y1)
+            if total_length + segment_length &gt;= target_length:
+                frac_seg = (target_length - total_length) / segment_length
+                point_x = x1 + (x2 - x1) * frac_seg
+                point_y = y1 + (y2 - y1) * frac_seg
+                if is_points_close((x2, y2), (point_x, point_y)) == False:
+                    self.coords.insert(i + 2, point_y)
+                    self.coords.insert(i + 2, point_x)
+                    self.length = calculate_length(self.coords)
+                return
+            total_length += segment_length
+
+    def point_and_angle(self, t) -&gt; tuple[tuple, float]:
+        &#34;&#34;&#34;Returns point and tangent angle at time t (in range 0~1)&#34;&#34;&#34;
+
+        if t == 1:
+            angle = math.atan2(self.coords[-1] - self.coords[-3],
+                               self.coords[-2] - self.coords[-4])
+            return ([self.coords[-2], self.coords[-1]],  angle)
+        if t == 0:
+            angle = math.atan2(self.coords[3] - self.coords[1],
+                               self.coords[2] - self.coords[0])
+            return ([self.coords[0], self.coords[1]],  angle)
+
+        target_length = t * self.length
+        return get_pos(self.coords, target_length)
+
+    def offset(self, t: float, lenght: float) -&gt; tuple[tuple, tuple]:
+        &#34;&#34;&#34;Returns the outer and inner parallel points of the given length in time on the path.&#34;&#34;&#34;
+        pos, ang = self.point_and_angle(t)
+        ang += math.pi * 0.5
+        p1 = point_on_circle(pos, lenght, ang)
+        p2 = point_on_circle(pos, lenght, opposite_angle(ang))
+        return (p1, p2)
+
+    def resample(self, n):
+        &#34;&#34;&#34;Resamples the points on the path n times&#34;&#34;&#34;
+        cords = []
+        for i in linspace(0, 1, n):
+            cords.extend(self.point_and_angle(i)[0])
+        self.coords = cords
+        self.length = calculate_length(self.coords)
+        return self
+
+    def draw(self, fill=&#34;#181818&#34;, stroke=&#34;grey&#34;, thickness=1.5):
+        &#34;&#34;&#34;Draws the path on the canvas.&#34;&#34;&#34;
+        singleton.draw_path(self.coords, fill, stroke,
+                            thickness, self.is_closed())
+        return self
+
+    def draw_debug(self, radius=3, fill=80, stroke=&#34;white&#34;, thickness=1.5):
+        &#34;&#34;&#34;Draws path features as colored dots. It is for debugging purposes.
+
+        The starting point is blue. The second point is green and helps find the direction of the path.
+        &#34;&#34;&#34;
+        singleton.draw_path(self.coords, fill, stroke, thickness)
+        points = self.as_tuples()
+        for i, p in enumerate(points):
+            if i != 0 or 1:
+                singleton.draw_ellipse(
+                    p, radius, radius, &#34;grey&#34;, None)
+        singleton.draw_ellipse(points[0], radius, radius, &#34;deepskyblue&#34;, None)
+        singleton.draw_ellipse(points[1], radius, radius, &#34;lightgreen&#34;, None)
+        return self
+
+    def print_info(self, round_coords=True, lines=False):
+        &#34;Prints path info and coordinates&#34;
+        anchor_ = &#34;anchor: &#34; + str(self.anchor)
+        closed_, points_ = str(self.is_closed()), str(
+            int(len(self.coords) / 2))
+        if lines:
+            print(&#34;closed:&#34;, closed_, &#34;| &#34;, &#34;points:&#34;, points_, &#34;| &#34;, anchor_)
+            for p in self.as_tuples(round_coords=round_coords):
+                print(p)
+        else:
+            print(&#34;closed:&#34;, closed_, &#34;| &#34;, &#34;points:&#34;, points_, &#34;| &#34;, anchor_)
+            print(&#34;coords: &#34;, self.as_tuples(round_coords=round_coords))
+        return self</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="pd.path.Path.bounds"><code class="name">var <span class="ident">bounds</span> : list[tuple]</code></dt>
+<dd>
+<div class="desc"><p>Returns top-left and bottom-right bounding box coordinates as list. [p1, p2]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def bounds(self) -&gt; list[tuple]:
+    &#34;&#34;&#34;Returns top-left and bottom-right bounding box coordinates as list. [p1, p2]&#34;&#34;&#34;
+    return bbox(self.coords)</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.centroid"><code class="name">var <span class="ident">centroid</span> : tuple</code></dt>
+<dd>
+<div class="desc"><p>Calculates and returns path centroid</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def centroid(self) -&gt; tuple:
+    &#34;&#34;&#34;Calculates and returns path centroid&#34;&#34;&#34;
+    if self.is_closed() == False:
+        return centroid(self.coords)
+    else:
+        self.open()
+        point = centroid(self.coords)
+        self.close()
+        return point</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.end"><code class="name">var <span class="ident">end</span> : tuple</code></dt>
+<dd>
+<div class="desc"><p>Returns end point</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def end(self) -&gt; tuple:
+    &#34;&#34;&#34;Returns end point&#34;&#34;&#34;
+    return (self.coords[-2], self.coords[-1])</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.points"><code class="name">var <span class="ident">points</span></code></dt>
+<dd>
+<div class="desc"><p>Returns number of points</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def points(self):
+    &#34;&#34;&#34;Returns number of points&#34;&#34;&#34;
+    return (len(self.coords) / 2)</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.segs"><code class="name">var <span class="ident">segs</span></code></dt>
+<dd>
+<div class="desc"><p>Returns number of segments</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def segs(self):
+    &#34;&#34;&#34;Returns number of segments&#34;&#34;&#34;
+    return (len(self.coords) / 2) - 1</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.start"><code class="name">var <span class="ident">start</span> : tuple</code></dt>
+<dd>
+<div class="desc"><p>Returns start point</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def start(self) -&gt; tuple:
+    &#34;&#34;&#34;Returns start point&#34;&#34;&#34;
+    return (self.coords[0], self.coords[1])</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="pd.path.Path.add_point"><code class="name flex">
+<span>def <span class="ident">add_point</span></span>(<span>self, t)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds a point at position t to the path.</p>
+<p>If there is already a point in the position, the point is not added.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_point(self, t):
+    &#34;&#34;&#34;Adds a point at position t to the path.
+
+    If there is already a point in the position, the point is not added.
+    &#34;&#34;&#34;
+
+    if t == 1 or t == 0:
+        return
+
+    target_length = t * self.length
+    total_length = 0.0
+    for i in range(0, len(self.coords) - 2, 2):
+        x1, y1 = self.coords[i], self.coords[i + 1]
+        x2, y2 = self.coords[i + 2], self.coords[i + 3]
+        segment_length = math.hypot(x2 - x1, y2 - y1)
+        if total_length + segment_length &gt;= target_length:
+            frac_seg = (target_length - total_length) / segment_length
+            point_x = x1 + (x2 - x1) * frac_seg
+            point_y = y1 + (y2 - y1) * frac_seg
+            if is_points_close((x2, y2), (point_x, point_y)) == False:
+                self.coords.insert(i + 2, point_y)
+                self.coords.insert(i + 2, point_x)
+                self.length = calculate_length(self.coords)
+            return
+        total_length += segment_length</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.as_tuples"><code class="name flex">
+<span>def <span class="ident">as_tuples</span></span>(<span>self, round_coords=False) ‑> list[tuple]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns path coords as tuple list</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def as_tuples(self, round_coords=False) -&gt; list[tuple]:
+    &#34;&#34;&#34;Returns path coords as tuple list&#34;&#34;&#34;
+    return list2tuples(self.coords, round_coords=round_coords)</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.clone"><code class="name flex">
+<span>def <span class="ident">clone</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns copy of Path</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def clone(self):
+    &#34;&#34;&#34;Returns copy of Path&#34;&#34;&#34;
+    cp = deepcopy(self)
+    return cp</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.close"><code class="name flex">
+<span>def <span class="ident">close</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Closes the path</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def close(self):
+    &#34;&#34;&#34;Closes the path&#34;&#34;&#34;
+    if self.is_closed() == False:
+        self.coords.extend((self.coords[0], self.coords[1]))
+        self.length = calculate_length(self.coords)
+    return self</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.draw"><code class="name flex">
+<span>def <span class="ident">draw</span></span>(<span>self, fill='#181818', stroke='grey', thickness=1.5)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Draws the path on the canvas.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def draw(self, fill=&#34;#181818&#34;, stroke=&#34;grey&#34;, thickness=1.5):
+    &#34;&#34;&#34;Draws the path on the canvas.&#34;&#34;&#34;
+    singleton.draw_path(self.coords, fill, stroke,
+                        thickness, self.is_closed())
+    return self</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.draw_debug"><code class="name flex">
+<span>def <span class="ident">draw_debug</span></span>(<span>self, radius=3, fill=80, stroke='white', thickness=1.5)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Draws path features as colored dots. It is for debugging purposes.</p>
+<p>The starting point is blue. The second point is green and helps find the direction of the path.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def draw_debug(self, radius=3, fill=80, stroke=&#34;white&#34;, thickness=1.5):
+    &#34;&#34;&#34;Draws path features as colored dots. It is for debugging purposes.
+
+    The starting point is blue. The second point is green and helps find the direction of the path.
+    &#34;&#34;&#34;
+    singleton.draw_path(self.coords, fill, stroke, thickness)
+    points = self.as_tuples()
+    for i, p in enumerate(points):
+        if i != 0 or 1:
+            singleton.draw_ellipse(
+                p, radius, radius, &#34;grey&#34;, None)
+    singleton.draw_ellipse(points[0], radius, radius, &#34;deepskyblue&#34;, None)
+    singleton.draw_ellipse(points[1], radius, radius, &#34;lightgreen&#34;, None)
+    return self</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.is_closed"><code class="name flex">
+<span>def <span class="ident">is_closed</span></span>(<span>self) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Checks if the Path is closed.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_closed(self) -&gt; bool:
+    &#34;&#34;&#34;Checks if the Path is closed.&#34;&#34;&#34;
+    x1, y1 = self.coords[:2]
+    x2, y2 = self.coords[-2:]
+    return math.isclose(x1, x2) and math.isclose(y1, y2)</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.offset"><code class="name flex">
+<span>def <span class="ident">offset</span></span>(<span>self, t: float, lenght: float) ‑> tuple[tuple, tuple]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the outer and inner parallel points of the given length in time on the path.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def offset(self, t: float, lenght: float) -&gt; tuple[tuple, tuple]:
+    &#34;&#34;&#34;Returns the outer and inner parallel points of the given length in time on the path.&#34;&#34;&#34;
+    pos, ang = self.point_and_angle(t)
+    ang += math.pi * 0.5
+    p1 = point_on_circle(pos, lenght, ang)
+    p2 = point_on_circle(pos, lenght, opposite_angle(ang))
+    return (p1, p2)</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.open"><code class="name flex">
+<span>def <span class="ident">open</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Opens the path</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def open(self):
+    &#34;&#34;&#34;Opens the path&#34;&#34;&#34;
+    if self.is_closed():
+        self.coords = self.coords[:-2]
+        self.length = calculate_length(self.coords)
+    return self</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.point_and_angle"><code class="name flex">
+<span>def <span class="ident">point_and_angle</span></span>(<span>self, t) ‑> tuple[tuple, float]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns point and tangent angle at time t (in range 0~1)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def point_and_angle(self, t) -&gt; tuple[tuple, float]:
+    &#34;&#34;&#34;Returns point and tangent angle at time t (in range 0~1)&#34;&#34;&#34;
+
+    if t == 1:
+        angle = math.atan2(self.coords[-1] - self.coords[-3],
+                           self.coords[-2] - self.coords[-4])
+        return ([self.coords[-2], self.coords[-1]],  angle)
+    if t == 0:
+        angle = math.atan2(self.coords[3] - self.coords[1],
+                           self.coords[2] - self.coords[0])
+        return ([self.coords[0], self.coords[1]],  angle)
+
+    target_length = t * self.length
+    return get_pos(self.coords, target_length)</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.print_info"><code class="name flex">
+<span>def <span class="ident">print_info</span></span>(<span>self, round_coords=True, lines=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Prints path info and coordinates</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def print_info(self, round_coords=True, lines=False):
+    &#34;Prints path info and coordinates&#34;
+    anchor_ = &#34;anchor: &#34; + str(self.anchor)
+    closed_, points_ = str(self.is_closed()), str(
+        int(len(self.coords) / 2))
+    if lines:
+        print(&#34;closed:&#34;, closed_, &#34;| &#34;, &#34;points:&#34;, points_, &#34;| &#34;, anchor_)
+        for p in self.as_tuples(round_coords=round_coords):
+            print(p)
+    else:
+        print(&#34;closed:&#34;, closed_, &#34;| &#34;, &#34;points:&#34;, points_, &#34;| &#34;, anchor_)
+        print(&#34;coords: &#34;, self.as_tuples(round_coords=round_coords))
+    return self</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.repeated"><code class="name flex">
+<span>def <span class="ident">repeated</span></span>(<span>self, n)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns new repeated version of path n times</p>
+<p>Useful for creating motion path loops.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def repeated(self, n):
+    &#34;&#34;&#34;Returns new repeated version of path n times
+
+    Useful for creating motion path loops.
+    &#34;&#34;&#34;
+    clone = deepcopy(self)
+    clone.open()
+    clone.coords = clone.coords * n
+    clone.close()
+    return clone</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.resample"><code class="name flex">
+<span>def <span class="ident">resample</span></span>(<span>self, n)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Resamples the points on the path n times</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def resample(self, n):
+    &#34;&#34;&#34;Resamples the points on the path n times&#34;&#34;&#34;
+    cords = []
+    for i in linspace(0, 1, n):
+        cords.extend(self.point_and_angle(i)[0])
+    self.coords = cords
+    self.length = calculate_length(self.coords)
+    return self</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.reverse"><code class="name flex">
+<span>def <span class="ident">reverse</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>reverse direction of path (order of coordinates).</p>
+<p>The starting point becomes the end and the end becomes the beginning.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def reverse(self):
+    &#34;&#34;&#34;reverse direction of path (order of coordinates).
+
+    The starting point becomes the end and the end becomes the beginning.
+    &#34;&#34;&#34;
+    self.coords.reverse()
+    for i in range(0, len(self.coords), 2):
+        self.coords[i], self.coords[i+1] = self.coords[i+1], self.coords[i]
+    return self</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.rotate"><code class="name flex">
+<span>def <span class="ident">rotate</span></span>(<span>self, angle, anchor_point: tuple = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Rotates the Path around the anchor point.</p>
+<p>The default anchor point is the centroid point of the shape.
+The anchor point of newly created Path objects
+is calculated by averaging the coordinates.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rotate(self, angle, anchor_point: tuple = None):
+    &#34;&#34;&#34;Rotates the Path around the anchor point.
+
+    The default anchor point is the centroid point of the shape. 
+    The anchor point of newly created Path objects
+    is calculated by averaging the coordinates.&#34;&#34;&#34;
+
+    if anchor_point == None:
+        anchor_point = self.anchor
+    rotate(self.coords, angle, anchor_point)
+    return self</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.rotated"><code class="name flex">
+<span>def <span class="ident">rotated</span></span>(<span>self, angle, anchor_point: tuple = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns a new Path rotated around the anchor point.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rotated(self, angle, anchor_point: tuple = None):
+    &#34;&#34;&#34;Returns a new Path rotated around the anchor point.&#34;&#34;&#34;
+    cp = deepcopy(self)
+    if anchor_point == None:
+        anchor_point = cp.anchor
+    return cp.rotate(angle, anchor_point)</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.scale"><code class="name flex">
+<span>def <span class="ident">scale</span></span>(<span>self, x, y, anchor_point: tuple = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Scales the Path around the anchor point</p>
+<p>The default anchor point is the centroid point of the shape.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def scale(self, x, y, anchor_point: tuple = None):
+    &#34;&#34;&#34;Scales the Path around the anchor point
+
+    The default anchor point is the centroid point of the shape.&#34;&#34;&#34;
+
+    if anchor_point == None:
+        anchor_point = self.anchor
+    scale(self.coords, x, y, anchor_point)
+    self.length = calculate_length(self.coords)
+    return self</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.scaled"><code class="name flex">
+<span>def <span class="ident">scaled</span></span>(<span>self, x, y, anchor_point: tuple = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns new scaled Path</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def scaled(self, x, y, anchor_point: tuple = None):
+    &#34;&#34;&#34;Returns new scaled Path&#34;&#34;&#34;
+    cp = deepcopy(self)
+    return cp.scale(x, y, anchor_point)</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.set_anchor"><code class="name flex">
+<span>def <span class="ident">set_anchor</span></span>(<span>self, pos: tuple)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_anchor(self, pos: tuple):
+    self.anchor = pos
+    return self</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.set_pos"><code class="name flex">
+<span>def <span class="ident">set_pos</span></span>(<span>self, pos: tuple) ‑> Self</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Moves the shape to the target position.</p>
+<p>The anchor point of the Path is taken as basis.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_pos(self, pos: tuple) -&gt; Self:
+    &#34;&#34;&#34;Moves the shape to the target position.
+
+    The anchor point of the Path is taken as basis.
+    &#34;&#34;&#34;
+    self.translate(pos[0] - self.anchor[0], pos[1] - self.anchor[1])
+    return self</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.set_start"><code class="name flex">
+<span>def <span class="ident">set_start</span></span>(<span>self, index)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets start point of path. (shift coordinates)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_start(self, index):
+    &#34;&#34;&#34;Sets start point of path. (shift coordinates)&#34;&#34;&#34;
+    self.open()
+    self.coords = shift(self.coords, index * 2)
+    self.close()
+    self.length = calculate_length(self.coords)</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.translate"><code class="name flex">
+<span>def <span class="ident">translate</span></span>(<span>self, x, y)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Translates Path</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def translate(self, x, y):
+    &#34;&#34;&#34;Translates Path&#34;&#34;&#34;
+    translate(self.coords, x, y)
+    self.anchor = (self.anchor[0] + x, self.anchor[1] + y)
+    return self</code></pre>
+</details>
+</dd>
+<dt id="pd.path.Path.translated"><code class="name flex">
+<span>def <span class="ident">translated</span></span>(<span>self, x, y)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns new translated Path</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def translated(self, x, y):
+    &#34;&#34;&#34;Returns new translated Path&#34;&#34;&#34;
+    cp = deepcopy(self)
+    cp.translate(x, y)
+    return cp</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="pd" href="index.html">pd</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="pd.path.CBezier" href="#pd.path.CBezier">CBezier</a></code></h4>
+<ul class="">
+<li><code><a title="pd.path.CBezier.flatten" href="#pd.path.CBezier.flatten">flatten</a></code></li>
+<li><code><a title="pd.path.CBezier.point" href="#pd.path.CBezier.point">point</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="pd.path.Path" href="#pd.path.Path">Path</a></code></h4>
+<ul class="two-column">
+<li><code><a title="pd.path.Path.add_point" href="#pd.path.Path.add_point">add_point</a></code></li>
+<li><code><a title="pd.path.Path.as_tuples" href="#pd.path.Path.as_tuples">as_tuples</a></code></li>
+<li><code><a title="pd.path.Path.bounds" href="#pd.path.Path.bounds">bounds</a></code></li>
+<li><code><a title="pd.path.Path.centroid" href="#pd.path.Path.centroid">centroid</a></code></li>
+<li><code><a title="pd.path.Path.clone" href="#pd.path.Path.clone">clone</a></code></li>
+<li><code><a title="pd.path.Path.close" href="#pd.path.Path.close">close</a></code></li>
+<li><code><a title="pd.path.Path.draw" href="#pd.path.Path.draw">draw</a></code></li>
+<li><code><a title="pd.path.Path.draw_debug" href="#pd.path.Path.draw_debug">draw_debug</a></code></li>
+<li><code><a title="pd.path.Path.end" href="#pd.path.Path.end">end</a></code></li>
+<li><code><a title="pd.path.Path.is_closed" href="#pd.path.Path.is_closed">is_closed</a></code></li>
+<li><code><a title="pd.path.Path.offset" href="#pd.path.Path.offset">offset</a></code></li>
+<li><code><a title="pd.path.Path.open" href="#pd.path.Path.open">open</a></code></li>
+<li><code><a title="pd.path.Path.point_and_angle" href="#pd.path.Path.point_and_angle">point_and_angle</a></code></li>
+<li><code><a title="pd.path.Path.points" href="#pd.path.Path.points">points</a></code></li>
+<li><code><a title="pd.path.Path.print_info" href="#pd.path.Path.print_info">print_info</a></code></li>
+<li><code><a title="pd.path.Path.repeated" href="#pd.path.Path.repeated">repeated</a></code></li>
+<li><code><a title="pd.path.Path.resample" href="#pd.path.Path.resample">resample</a></code></li>
+<li><code><a title="pd.path.Path.reverse" href="#pd.path.Path.reverse">reverse</a></code></li>
+<li><code><a title="pd.path.Path.rotate" href="#pd.path.Path.rotate">rotate</a></code></li>
+<li><code><a title="pd.path.Path.rotated" href="#pd.path.Path.rotated">rotated</a></code></li>
+<li><code><a title="pd.path.Path.scale" href="#pd.path.Path.scale">scale</a></code></li>
+<li><code><a title="pd.path.Path.scaled" href="#pd.path.Path.scaled">scaled</a></code></li>
+<li><code><a title="pd.path.Path.segs" href="#pd.path.Path.segs">segs</a></code></li>
+<li><code><a title="pd.path.Path.set_anchor" href="#pd.path.Path.set_anchor">set_anchor</a></code></li>
+<li><code><a title="pd.path.Path.set_pos" href="#pd.path.Path.set_pos">set_pos</a></code></li>
+<li><code><a title="pd.path.Path.set_start" href="#pd.path.Path.set_start">set_start</a></code></li>
+<li><code><a title="pd.path.Path.start" href="#pd.path.Path.start">start</a></code></li>
+<li><code><a title="pd.path.Path.translate" href="#pd.path.Path.translate">translate</a></code></li>
+<li><code><a title="pd.path.Path.translated" href="#pd.path.Path.translated">translated</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
