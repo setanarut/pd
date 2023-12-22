@@ -1,3 +1,5 @@
+> ! Repo moved to [codeberg.org/setanarut/pd](https://codeberg.org/setanarut/pd)
+> 
 # PD
 
 PD (PIL draw) is a Python drawing library. (Uses aggdraw on PIL Image surface) You can check out the [wiki page](https://github.com/setanarut/pd/wiki/Quick-Start#a-simple-ellipse-drawing) for a quick start.
